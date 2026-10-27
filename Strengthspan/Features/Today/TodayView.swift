@@ -12,9 +12,10 @@ struct TodayView: View {
     @Query(sort: \WorkoutSession.scheduledDate)
     private var sessions: [WorkoutSession]
 
-    @Query(filter: #Predicate<AssessmentSession> { $0.completedAt != nil },
-           sort: \AssessmentSession.startedAt, order: .reverse)
-    private var completedAssessments: [AssessmentSession]
+    // Filtered in memory: a #Predicate on the optional `completedAt` key path triggers
+    // Sendable warnings under strict concurrency, and a user has only a few sessions.
+    @Query(sort: \AssessmentSession.startedAt, order: .reverse)
+    private var assessments: [AssessmentSession]
 
     @Query(sort: \CapacityMetric.computedAt, order: .reverse)
     private var metrics: [CapacityMetric]
@@ -96,7 +97,7 @@ struct TodayView: View {
 
     private var reassessmentStatus: ReassessmentStatus {
         reassessmentPolicy.status(
-            lastCompletedAssessment: completedAssessments.first?.completedAt,
+            lastCompletedAssessment: assessments.lazy.compactMap(\.completedAt).first,
             now: clock.now,
             calendar: calendar
         )
