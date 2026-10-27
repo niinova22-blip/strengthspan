@@ -10,6 +10,7 @@ struct TodayView: View {
     @Environment(\.calendar) private var calendar
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.reassessmentPolicy) private var reassessmentPolicy
+    @Environment(\.subscriptions) private var subscriptions
 
     @Query private var profiles: [UserProfile]
     @Query(sort: \WorkoutSession.scheduledDate) private var sessions: [WorkoutSession]
@@ -23,6 +24,9 @@ struct TodayView: View {
     @State private var activeSession: WorkoutSession?
     @State private var confirmingClearance = false
     @State private var confirmingRecovery = false
+    @State private var showsPaywall = false
+    @State private var showsAssessment = false
+    @State private var playedSession: WorkoutSession?
 
     var body: some View {
         NavigationStack {
@@ -42,7 +46,7 @@ struct TodayView: View {
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { refreshID += 1 }
         }
-        .fullScreenCover(item: $activeSession, onDismiss: { refreshID += 1 }) { session in
+        .fullScreenCover(item: $activeSession, onDismiss: workoutDismissed) { session in
             WorkoutPlayerView(
                 model: WorkoutPlayerModel(
                     session: session,
@@ -52,6 +56,16 @@ struct TodayView: View {
                 ),
                 hapticsEnabled: preferences?.hapticsEnabled ?? true
             )
+        }
+        .fullScreenCover(isPresented: $showsAssessment, onDismiss: { refreshID += 1 }) {
+            AssessmentFlowView(
+                model: AssessmentFlowModel(store: AssessmentStore(context: modelContext, calendar: calendar), training: store, clock: clock),
+                voiceEnabled: preferences?.voiceGuidanceEnabled ?? true
+            )
+        }
+        .sheet(isPresented: $showsPaywall) {
+            PaywallView()
+                .environment(\.subscriptions, subscriptions)
         }
         .confirmationDialog("today.blocked.review.confirm", isPresented: $confirmingClearance, titleVisibility: .visible) {
             Button("today.blocked.review.action") { update { try $0.confirmProfessionalClearance(now: clock.now) } }
@@ -94,7 +108,7 @@ struct TodayView: View {
                     .font(SSFont.callout)
                     .foregroundStyle(SSColor.textSecondary)
                 Button(session.status == .inProgress ? LocalizedStringKey("today.workout.continue") : "today.workout.start") {
-                    activeSession = session
+                    startWorkout(session)
                 }
                 .buttonStyle(.ssPrimary)
                 .accessibilityIdentifier("today.workout.start")
@@ -134,6 +148,11 @@ struct TodayView: View {
     private var progressCard: some View {
         SSCard("today.progress.title", systemImage: "chart.line.uptrend.xyaxis") {
             VStack(alignment: .leading, spacing: SSSpacing.s) {
+                if !isPro {
+                    Text("today.progress.freeWorkouts \(max(0, FeatureAccess.freeWorkoutLimit - completedWorkoutCount))")
+                        .font(SSFont.footnote)
+                        .foregroundStyle(SSColor.textSecondary)
+                }
                 if !currentPlanSessions.isEmpty {
                     Text("today.progress.week \(currentPlanSessions.filter { $0.status == .completed }.count) \(currentPlanSessions.count)")
                         .font(SSFont.body)
@@ -168,6 +187,12 @@ struct TodayView: View {
                 Text("today.assessment.cadence")
                     .font(SSFont.footnote)
                     .foregroundStyle(SSColor.textSecondary)
+
+                Button(completedAssessmentCount == 0 ? LocalizedStringKey("today.assessment.start") : "today.assessment.reassess") {
+                    startAssessment()
+                }
+                .buttonStyle(reassessmentStatus == .neverAssessed || isDue ? AnyButtonStyle(.ssPrimary) : AnyButtonStyle(.ssSecondary))
+                .accessibilityIdentifier("today.assessment.start")
             }
             .font(SSFont.body)
         }
@@ -207,7 +232,7 @@ struct TodayView: View {
     }
 
     private var measuredDimensionCount: Int {
-        Set(metrics.filter { $0.score != nil }.compactMap(\.dimension)).count
+        Set(metrics.filter { $0.value != nil }.compactMap(\.dimension)).count
     }
 
     private var reassessmentStatus: ReassessmentStatus {
@@ -218,7 +243,60 @@ struct TodayView: View {
         )
     }
 
+    private var isPro: Bool { subscriptions?.isPro ?? false }
+
+    private var completedWorkoutCount: Int {
+        sessions.filter { $0.status == .completed }.count
+    }
+
+    private var completedAssessmentCount: Int {
+        assessments.filter { $0.completedAt != nil }.count
+    }
+
+    private var isDue: Bool {
+        if case .due = reassessmentStatus { return true }
+        return false
+    }
+
     // MARK: Actions
+
+    private func startWorkout(_ session: WorkoutSession) {
+        // A workout already under way can always be finished.
+        guard session.status == .inProgress || FeatureAccess.canStartWorkout(isPro: isPro, completedWorkouts: completedWorkoutCount) else {
+            showsPaywall = true
+            return
+        }
+        playedSession = session
+        activeSession = session
+    }
+
+    private func startAssessment() {
+        guard FeatureAccess.canStartAssessment(isPro: isPro, completedAssessments: completedAssessmentCount) else {
+            showsPaywall = true
+            return
+        }
+        showsAssessment = true
+    }
+
+    private func workoutDismissed() {
+        refreshID += 1
+        guard let session = playedSession else { return }
+        playedSession = nil
+        guard FeatureAccess.canUseHealthKit(isPro: isPro),
+              preferences?.saveToHealthEnabled == true,
+              session.status == .completed,
+              session.exportedToHealthAt == nil,
+              let start = session.startedAt, let end = session.completedAt else { return }
+        Task {
+            do {
+                try await HealthKitService.shared.saveStrengthWorkout(start: start, end: end)
+                session.exportedToHealthAt = clock.now
+                try modelContext.save()
+            } catch {
+                Logger.persistence.error("Saving to Apple Health failed: \(String(describing: error))")
+            }
+        }
+    }
 
     private func refreshPlan() {
         do {

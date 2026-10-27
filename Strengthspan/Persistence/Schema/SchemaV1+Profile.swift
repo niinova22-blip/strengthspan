@@ -81,6 +81,8 @@ extension SchemaV1 {
         var preferredWeekdays: [Int]
         var voiceGuidanceEnabled: Bool
         var hapticsEnabled: Bool
+        /// Off by default; turned on only after the user grants Apple Health permission.
+        var saveToHealthEnabled: Bool = false
         var profile: UserProfile?
 
         init(

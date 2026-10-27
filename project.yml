@@ -47,6 +47,14 @@ targets:
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         UIRequiredDeviceCapabilities: [arm64]
+        NSCameraUsageDescription: Strengthspan uses the camera only during a capacity check to count your movements on this iPhone. Images are never saved or sent anywhere.
+        NSHealthUpdateUsageDescription: Strengthspan can save your completed workouts to Apple Health.
+        NSHealthShareUsageDescription: Strengthspan does not read your Apple Health data.
+    entitlements:
+      path: Strengthspan/Resources/Strengthspan.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.strengthspan.app

@@ -79,6 +79,32 @@ final class StrengthspanUITests: XCTestCase {
     }
 
     @MainActor
+    func testFirstCapacityCheckIsFreeAndReassessmentNeedsPro() throws {
+        let app = launch(language: "en", locale: "en_US")
+        completeOnboarding(app)
+
+        tap("today.assessment.start", in: app)
+        tap("assessment.overview.start", in: app)
+        // Skip the first four tests, measure overhead reach by hand.
+        for _ in 0..<4 {
+            tap("assessment.intro.skip", in: app)
+        }
+        tap("assessment.intro.manual", in: app)
+        tap("assessment.reach.3", in: app)
+        tap("assessment.result.save", in: app)
+        tap("assessment.summary.save", in: app)
+        tap("assessment.saved.done", in: app)
+
+        // A second check is a Pro feature: the paywall opens instead.
+        tap("today.assessment.start", in: app)
+        XCTAssertTrue(app.buttons["paywall.close"].waitForExistence(timeout: 5))
+        tap("paywall.close", in: app)
+
+        app.tabBars.firstMatch.buttons["Progress"].tap()
+        XCTAssertTrue(app.staticTexts["Arm fully overhead, beside my ear"].waitForExistence(timeout: 5))
+    }
+
+    @MainActor
     func testLaunchesInTurkish() throws {
         let app = launch(language: "tr", locale: "tr_TR")
         let start = app.buttons["onboarding.next"]

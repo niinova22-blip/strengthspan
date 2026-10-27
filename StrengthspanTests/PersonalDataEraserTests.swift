@@ -58,7 +58,7 @@ struct PersonalDataEraserTests {
                              reliability: .moderate, usedSupport: false, setupVariant: "standard-chair")
         )
         assessment.metrics.append(
-            CapacityMetric(dimension: .strength, score: 40, reliability: .moderate, scoringModelVersion: "test")
+            CapacityMetric(dimension: .strength, assessmentKey: "chairStand30s", value: 11, unit: .repetitions, method: .manual, reliability: .moderate)
         )
 
         context.insert(

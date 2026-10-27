@@ -46,6 +46,8 @@ extension SchemaV1 {
         var startedAt: Date?
         var completedAt: Date?
         var statusRaw: String
+        /// Set once the session has been written to Apple Health, so it is never written twice.
+        var exportedToHealthAt: Date?
         var plan: WorkoutPlan?
 
         @Relationship(deleteRule: .cascade, inverse: \WorkoutSet.session)

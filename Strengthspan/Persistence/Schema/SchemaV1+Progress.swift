@@ -2,37 +2,46 @@ import Foundation
 import SwiftData
 
 extension SchemaV1 {
-    /// A capacity-dimension summary derived from one assessment session.
-    /// `score` is `nil` when there isn't enough valid data; the UI must then say so instead of
-    /// showing a number. Scores compare the user with themselves only and are not clinical.
+    /// The value that represents one capacity dimension after an assessment session.
+    ///
+    /// Strengthspan deliberately shows real test values (e.g. "14 stands in 30 s") instead of an
+    /// invented 0–100 score. `value` is `nil` when there was no usable result; the UI must then say
+    /// "Not enough measurements yet". Values compare the user with themselves only and are not clinical.
     @Model
     final class CapacityMetric {
         @Attribute(.unique) var id: UUID
         var computedAt: Date
         var dimensionRaw: String
-        /// 0–100 when present.
-        var score: Double?
+        var assessmentKey: String
+        var value: Double?
+        var unitRaw: String
+        var methodRaw: String
         var reliabilityRaw: String
-        var scoringModelVersion: String
         var sourceSession: AssessmentSession?
 
         init(
             id: UUID = UUID(),
             computedAt: Date = .now,
             dimension: CapacityDimension,
-            score: Double?,
-            reliability: MeasurementReliability,
-            scoringModelVersion: String
+            assessmentKey: String,
+            value: Double?,
+            unit: MeasurementUnit,
+            method: MeasurementMethod,
+            reliability: MeasurementReliability
         ) {
             self.id = id
             self.computedAt = computedAt
             self.dimensionRaw = dimension.rawValue
-            self.score = score.map { min(max($0, 0), 100) }
+            self.assessmentKey = assessmentKey
+            self.value = reliability.isComparable ? value : nil
+            self.unitRaw = unit.rawValue
+            self.methodRaw = method.rawValue
             self.reliabilityRaw = reliability.rawValue
-            self.scoringModelVersion = scoringModelVersion
         }
 
         var dimension: CapacityDimension? { CapacityDimension(rawValue: dimensionRaw) }
+        var unit: MeasurementUnit? { MeasurementUnit(rawValue: unitRaw) }
+        var method: MeasurementMethod? { MeasurementMethod(rawValue: methodRaw) }
         var reliability: MeasurementReliability { MeasurementReliability(rawValue: reliabilityRaw) ?? .insufficient }
     }
 

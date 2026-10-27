@@ -134,7 +134,8 @@ struct PersistenceTests {
         let feedback = WorkoutFeedback(rpe: 14, discomfort: .mildFamiliar, dizzinessReported: false, completion: .full)
         #expect(feedback.rpe == 10)
 
-        let metric = CapacityMetric(dimension: .balance, score: 140, reliability: .high, scoringModelVersion: "test")
-        #expect(metric.score == 100)
+        // Untrustworthy values are never stored as capacity values.
+        let metric = CapacityMetric(dimension: .balance, assessmentKey: "supportedSemiTandem", value: 20, unit: .seconds, method: .manual, reliability: .low)
+        #expect(metric.value == nil)
     }
 }

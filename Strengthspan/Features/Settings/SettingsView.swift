@@ -1,4 +1,5 @@
 import OSLog
+import StoreKit
 import SwiftData
 import SwiftUI
 import UIKit
@@ -6,16 +7,38 @@ import UIKit
 struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
+    @Environment(\.subscriptions) private var subscriptions
     @Query private var profiles: [UserProfile]
 
     @State private var isConfirmingDeletion = false
     @State private var showsDeletionSuccess = false
     @State private var showsDeletionFailure = false
     @State private var deletionCount = 0
+    @State private var showsPaywall = false
+    @State private var showsManage = false
+    @State private var exportFile: ExportFile?
+    @State private var showsExportFailure = false
+    @State private var showsHealthDenied = false
 
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    LabeledContent("settings.subscription.status") {
+                        Text(subscriptions?.isPro == true ? LocalizedStringKey("settings.subscription.pro") : "settings.subscription.free")
+                    }
+                    if subscriptions?.isPro != true {
+                        Button("settings.subscription.seePlans") { showsPaywall = true }
+                            .frame(minHeight: SSLayout.minTouchTarget)
+                    }
+                    Button("paywall.restore") { Task { await subscriptions?.restore() } }
+                        .frame(minHeight: SSLayout.minTouchTarget)
+                    Button("paywall.manage") { showsManage = true }
+                        .frame(minHeight: SSLayout.minTouchTarget)
+                } header: {
+                    Text("settings.section.subscription")
+                }
+
                 Section {
                     Button {
                         openSystemSettings()
@@ -35,8 +58,16 @@ struct SettingsView: View {
                             .frame(minHeight: SSLayout.minTouchTarget)
                         Toggle("settings.haptics", isOn: binding(preferences, \.hapticsEnabled))
                             .frame(minHeight: SSLayout.minTouchTarget)
+                        if HealthKitService.isAvailable {
+                            Toggle("settings.appleHealth", isOn: healthBinding(preferences))
+                                .frame(minHeight: SSLayout.minTouchTarget)
+                        }
                     } header: {
                         Text("settings.section.workout")
+                    } footer: {
+                        if HealthKitService.isAvailable {
+                            Text("settings.appleHealth.footer")
+                        }
                     }
                     .tint(SSColor.accent)
                 }
@@ -44,6 +75,13 @@ struct SettingsView: View {
                 Section {
                     Label("settings.privacy.localOnly", systemImage: "lock.shield")
                         .foregroundStyle(SSColor.textPrimary)
+
+                    Button {
+                        exportData()
+                    } label: {
+                        Label("settings.export", systemImage: "square.and.arrow.up")
+                    }
+                    .frame(minHeight: SSLayout.minTouchTarget)
 
                     Button(role: .destructive) {
                         isConfirmingDeletion = true
@@ -93,6 +131,20 @@ struct SettingsView: View {
                 Button("common.ok", role: .cancel) {}
             }
             .sensoryFeedback(.success, trigger: deletionCount)
+            .sheet(isPresented: $showsPaywall) {
+                PaywallView()
+                    .environment(\.subscriptions, subscriptions)
+            }
+            .sheet(item: $exportFile) { file in
+                ShareSheet(items: [file.url])
+            }
+            .alert("settings.export.failure", isPresented: $showsExportFailure) {
+                Button("common.ok", role: .cancel) {}
+            }
+            .alert("settings.appleHealth.denied", isPresented: $showsHealthDenied) {
+                Button("common.ok", role: .cancel) {}
+            }
+            .manageSubscriptionsSheet(isPresented: $showsManage)
         }
     }
 
@@ -112,6 +164,40 @@ struct SettingsView: View {
                 try? modelContext.save()
             }
         )
+    }
+
+    private func healthBinding(_ preferences: UserPreferences) -> Binding<Bool> {
+        Binding(
+            get: { preferences.saveToHealthEnabled },
+            set: { enable in
+                guard enable else {
+                    preferences.saveToHealthEnabled = false
+                    try? modelContext.save()
+                    return
+                }
+                guard FeatureAccess.canUseHealthKit(isPro: subscriptions?.isPro ?? false) else {
+                    showsPaywall = true
+                    return
+                }
+                Task {
+                    if await HealthKitService.shared.requestWorkoutPermission() {
+                        preferences.saveToHealthEnabled = true
+                        try? modelContext.save()
+                    } else {
+                        showsHealthDenied = true
+                    }
+                }
+            }
+        )
+    }
+
+    private func exportData() {
+        do {
+            exportFile = ExportFile(url: try PersonalDataExporter(context: modelContext).writeFile(now: .now))
+        } catch {
+            Logger.persistence.error("Export failed: \(String(describing: error))")
+            showsExportFailure = true
+        }
     }
 
     private func openSystemSettings() {
@@ -137,3 +223,19 @@ struct SettingsView: View {
         .modelContainer(PreviewSupport.container(populated: false))
 }
 #endif
+
+private struct ExportFile: Identifiable {
+    let url: URL
+    var id: URL { url }
+}
+
+/// System share sheet for files.
+private struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ controller: UIActivityViewController, context: Context) {}
+}

@@ -29,6 +29,8 @@ struct LocalizationTests {
         keys += Equipment.allCases.map(\.localizationKey) + BodyRegion.allCases.map(\.localizationKey)
         keys += WorkoutBlock.allCases.map(\.localizationKey)
         keys += Discomfort.allCases.map { "feedback.discomfort.\($0.rawValue)" }
+        keys += AssessmentCatalog.all.flatMap { [$0.nameKey, $0.instructionKey, $0.setupKey] }
+        keys += (1...3).map { "measurement.level.\($0)" }
 
         for localization in ["en", "tr"] {
             let table = try table(for: localization)

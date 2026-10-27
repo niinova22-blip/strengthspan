@@ -132,6 +132,8 @@ enum AssessmentResultStatus: String, Codable, CaseIterable, Sendable {
     case skipped
     case rejectedLowQuality
     case stoppedForSafety
+    /// The user couldn't finish the test (e.g. five stands within the time limit). Not a quality problem.
+    case notCompleted
 }
 
 enum MeasurementMethod: String, Codable, CaseIterable, Sendable {
@@ -143,6 +145,8 @@ enum MeasurementUnit: String, Codable, CaseIterable, Sendable {
     case repetitions
     case seconds
     case degrees
+    /// Self-reported reach level 1…3 (manual mobility check).
+    case level
 }
 
 /// How much a measurement can be trusted. Only `high` and `moderate` results may drive

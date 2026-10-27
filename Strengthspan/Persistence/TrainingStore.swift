@@ -315,6 +315,14 @@ struct TrainingStore {
         return decision
     }
 
+    /// Applies a safety stop that happened outside a workout (e.g. during a capacity check).
+    @discardableResult
+    func report(_ reason: SafetyStopReason, now: Date) throws -> SafetyDecision {
+        let decision = SafetyEngine.evaluate(reason)
+        try apply(decision, now: now)
+        return decision
+    }
+
     private func apply(_ decision: SafetyDecision, now: Date) throws {
         let existing = Set(try activeConstraints().map { ConstraintSpec(kind: $0.kind, region: $0.bodyRegion) })
         let added = decision.newConstraints.filter { !existing.contains($0) }

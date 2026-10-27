@@ -22,7 +22,8 @@ struct DomainTypesTests {
     @Test func measurementValues() {
         #expect(MeasurementMethod.allCases.map(\.rawValue) == ["camera", "manual"])
         #expect(MeasurementReliability.allCases.map(\.rawValue) == ["high", "moderate", "low", "insufficient"])
-        #expect(AssessmentResultStatus.allCases.map(\.rawValue) == ["valid", "skipped", "rejectedLowQuality", "stoppedForSafety"])
+        #expect(AssessmentResultStatus.allCases.map(\.rawValue) == ["valid", "skipped", "rejectedLowQuality", "stoppedForSafety", "notCompleted"])
+        #expect(MeasurementUnit.allCases.map(\.rawValue) == ["repetitions", "seconds", "degrees", "level"])
     }
 
     @Test func profileValues() {

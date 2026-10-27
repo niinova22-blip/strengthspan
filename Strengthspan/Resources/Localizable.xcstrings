@@ -1,6 +1,992 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "assessment.calfRaise30s": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30-Second Calf Raise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 Saniye Topuk Kaldırma"
+          }
+        }
+      }
+    },
+    "assessment.calfRaise30s.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand facing a counter and hold it lightly. When the timer starts, rise onto the balls of both feet and lower again, as many times as you can in 30 seconds. Tap once for each rise."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir tezgâha dönük dur ve hafifçe tutun. Süre başlayınca 30 saniye içinde olabildiğince çok kez iki ayağının parmak uçlarında yüksel ve in. Her yükselişte bir kez dokun."
+          }
+        }
+      }
+    },
+    "assessment.calfRaise30s.setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This test is counted by hand."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu test elle sayılır."
+          }
+        }
+      }
+    },
+    "assessment.camera.denied": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera access is off. You can allow it in iOS Settings, or measure this test by hand."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera erişimi kapalı. iOS Ayarlar'dan izin verebilir ya da bu testi elle ölçebilirsin."
+          }
+        }
+      }
+    },
+    "assessment.camera.done": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bitti."
+          }
+        }
+      }
+    },
+    "assessment.camera.go": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go!"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başla!"
+          }
+        }
+      }
+    },
+    "assessment.camera.jointsNotVisible": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn sideways and step back until your hips, knees and feet are visible."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yan dön ve kalçan, dizlerin ve ayakların görünene kadar geri çekil."
+          }
+        }
+      }
+    },
+    "assessment.camera.measuring": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep going at a safe pace."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güvenli bir tempoda devam et."
+          }
+        }
+      }
+    },
+    "assessment.camera.multiplePeople": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make sure only you are in view."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kadrajda yalnızca senin olduğundan emin ol."
+          }
+        }
+      }
+    },
+    "assessment.camera.noPerson": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step into view so your whole body is visible."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tüm vücudun görünecek şekilde kadraja gir."
+          }
+        }
+      }
+    },
+    "assessment.camera.outOfFrame": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step back a little — part of your body is out of the picture."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biraz geri çekil — vücudunun bir kısmı kadrajın dışında."
+          }
+        }
+      }
+    },
+    "assessment.camera.ready": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold still — starting shortly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıpırdama — birazdan başlıyoruz."
+          }
+        }
+      }
+    },
+    "assessment.camera.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The camera isn't available on this device. You can measure this test by hand."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu cihazda kamera kullanılamıyor. Bu testi elle ölçebilirsin."
+          }
+        }
+      }
+    },
+    "assessment.chairStand30s": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30-Second Chair Stand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 Saniye Sandalyeden Kalkma"
+          }
+        }
+      }
+    },
+    "assessment.chairStand30s.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit in the middle of a sturdy chair without wheels, placed against a wall, with your arms crossed over your chest. When the timer starts, stand up fully and sit back down as many times as you can in 30 seconds. Go at a pace that feels safe and stop if you feel unwell."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duvara dayalı, tekerleksiz sağlam bir sandalyenin ortasına otur, kollarını göğsünde çaprazla. Süre başlayınca 30 saniye içinde olabildiğince çok kez tamamen ayağa kalk ve geri otur. Güvenli hissettiğin bir tempoda yap, kendini iyi hissetmezsen dur."
+          }
+        }
+      }
+    },
+    "assessment.chairStand30s.setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lean your iPhone against something stable 2–3 metres away at hip height, so it sees you from the side. Your hips, knees and ankles must stay visible."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone'unu 2–3 metre uzakta, kalça hizasında sabit bir yere yasla; seni yandan görsün. Kalçan, dizlerin ve ayak bileklerin görünür kalmalı."
+          }
+        }
+      }
+    },
+    "assessment.fiveTimesSitToStand": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Five Times Sit-to-Stand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 Kez Oturup Kalkma"
+          }
+        }
+      }
+    },
+    "assessment.fiveTimesSitToStand.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit in the chair with your arms crossed. When the timer starts, stand up fully and sit down five times as quickly as you safely can. Stop the timer after the fifth stand."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kollarını çaprazlayarak sandalyeye otur. Süre başlayınca güvenli şekilde yapabildiğin en hızlı tempoyla beş kez tamamen kalk ve otur. Beşinci kalkıştan sonra süre durur."
+          }
+        }
+      }
+    },
+    "assessment.fiveTimesSitToStand.setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lean your iPhone against something stable 2–3 metres away at hip height, so it sees you from the side. Your hips, knees and ankles must stay visible."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone'unu 2–3 metre uzakta, kalça hizasında sabit bir yere yasla; seni yandan görsün. Kalçan, dizlerin ve ayak bileklerin görünür kalmalı."
+          }
+        }
+      }
+    },
+    "assessment.intro.beta": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beta: camera measurement for this test is still being validated. Treat the value as an estimate."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beta: bu test için kamera ölçümü henüz doğrulanıyor. Değeri bir tahmin olarak düşün."
+          }
+        }
+      }
+    },
+    "assessment.intro.cameraSetup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Using the camera"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamerayla ölçüm"
+          }
+        }
+      }
+    },
+    "assessment.intro.skip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip this test"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu testi atla"
+          }
+        }
+      }
+    },
+    "assessment.intro.useCamera": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure with the camera"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamerayla ölç"
+          }
+        }
+      }
+    },
+    "assessment.manual.confirmCount": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check the count and correct it if needed."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sayıyı kontrol et, gerekirse düzelt."
+          }
+        }
+      }
+    },
+    "assessment.manual.couldNotFinish": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I couldn't finish"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamamlayamadım"
+          }
+        }
+      }
+    },
+    "assessment.manual.fiveDone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop — five stands done"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durdur — beş kalkış tamam"
+          }
+        }
+      }
+    },
+    "assessment.manual.holdStop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop timer"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Süreyi durdur"
+          }
+        }
+      }
+    },
+    "assessment.manual.reachQuestion": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How far could you comfortably raise your arm?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolunu rahatça ne kadar kaldırabildin?"
+          }
+        }
+      }
+    },
+    "assessment.manual.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start timer"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Süreyi başlat"
+          }
+        }
+      }
+    },
+    "assessment.manual.tapEach": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap once for every repetition"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her tekrarda bir kez dokun"
+          }
+        }
+      }
+    },
+    "assessment.manual.undo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undo last tap"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son dokunuşu geri al"
+          }
+        }
+      }
+    },
+    "assessment.overheadReach": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overhead Reach"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baş Üstüne Uzanma"
+          }
+        }
+      }
+    },
+    "assessment.overheadReach.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand tall with your arms by your sides. Slowly raise one arm forward and up as high as is comfortable, then lower it. Don't force the movement."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolların yanlarda, dik dur. Bir kolunu yavaşça önden yukarı, rahat edebildiğin kadar kaldır, sonra indir. Hareketi zorlama."
+          }
+        }
+      }
+    },
+    "assessment.overheadReach.setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place your iPhone 2 metres away at chest height so it sees you from the side. Your hip, shoulder, elbow and wrist must be visible."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone'unu 2 metre uzakta, göğüs hizasında yerleştir; seni yandan görsün. Kalçan, omzun, dirseğin ve bileğin görünür olmalı."
+          }
+        }
+      }
+    },
+    "assessment.overview.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Five short tests of strength, balance, mobility and movement control. It takes about 10 minutes. You can skip any test, and you can stop at any time."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kuvvet, denge, mobilite ve hareket kontrolü için beş kısa test. Yaklaşık 10 dakika sürer. İstediğin testi atlayabilir, istediğin an durabilirsin."
+          }
+        }
+      }
+    },
+    "assessment.overview.prepare": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Before you start"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlamadan önce"
+          }
+        }
+      }
+    },
+    "assessment.overview.prepareList": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• A sturdy chair without wheels, placed against a wall\n• A kitchen counter or table to hold\n• Comfortable shoes and some clear space"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Duvara dayalı, tekerleksiz sağlam bir sandalye\n• Tutunmak için bir mutfak tezgâhı ya da masa\n• Rahat ayakkabılar ve biraz boş alan"
+          }
+        }
+      }
+    },
+    "assessment.overview.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başla"
+          }
+        }
+      }
+    },
+    "assessment.overview.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capacity check"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapasite değerlendirmesi"
+          }
+        }
+      }
+    },
+    "assessment.progress %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test %1$lld of %2$lld"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test %1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "assessment.result.cameraEstimate": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera estimate. You can measure by hand instead if it looks wrong."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera tahmini. Yanlış görünüyorsa elle de ölçebilirsin."
+          }
+        }
+      }
+    },
+    "assessment.result.continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devam"
+          }
+        }
+      }
+    },
+    "assessment.result.lowQuality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We couldn't measure this reliably, so no result was saved. Try again with better lighting and your whole body in view, or measure by hand."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunu güvenilir şekilde ölçemedik, bu yüzden sonuç kaydedilmedi. Daha iyi ışıkta ve tüm vücudun görünürken tekrar dene ya da elle ölç."
+          }
+        }
+      }
+    },
+    "assessment.result.manualNote": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measured by you."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senin ölçümün."
+          }
+        }
+      }
+    },
+    "assessment.result.notCompleted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not completed — that's completely fine. We'll note it and build from where you are."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamamlanmadı — bu tamamen normal. Bunu not edip bulunduğun yerden ilerleyeceğiz."
+          }
+        }
+      }
+    },
+    "assessment.result.retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekrar dene"
+          }
+        }
+      }
+    },
+    "assessment.result.save": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save result"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonucu kaydet"
+          }
+        }
+      }
+    },
+    "assessment.saved.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your capacity map is updated. We'll suggest the next check in four weeks."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapasite haritan güncellendi. Bir sonraki değerlendirmeyi dört hafta sonra önereceğiz."
+          }
+        }
+      }
+    },
+    "assessment.saved.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capacity check saved"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Değerlendirme kaydedildi"
+          }
+        }
+      }
+    },
+    "assessment.summary.noResult": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No result"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonuç yok"
+          }
+        }
+      }
+    },
+    "assessment.summary.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Results are compared only with your own future checks done the same way."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonuçlar yalnızca aynı şekilde yapılan kendi sonraki ölçümlerinle karşılaştırılır."
+          }
+        }
+      }
+    },
+    "assessment.summary.save": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save capacity check"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Değerlendirmeyi kaydet"
+          }
+        }
+      }
+    },
+    "assessment.summary.skipped": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skipped"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atlandı"
+          }
+        }
+      }
+    },
+    "assessment.summary.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your results"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonuçların"
+          }
+        }
+      }
+    },
+    "assessment.supportedSemiTandem": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Balance Stand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekli Denge Duruşu"
+          }
+        }
+      }
+    },
+    "assessment.supportedSemiTandem.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand next to a counter with one hand resting on it. Place one foot half a step ahead so its heel is beside the big toe of the other foot. Start the timer and hold the position for up to 30 seconds. Keep your hand on the counter, and stop the timer if you need to step out."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir elin tezgâhın üzerinde, tezgâhın yanında dur. Bir ayağını yarım adım öne al; topuğu diğer ayağının başparmağının yanında olsun. Süreyi başlat ve bu duruşu en fazla 30 saniye koru. Elin tezgâhta kalsın; adım atman gerekirse süreyi durdur."
+          }
+        }
+      }
+    },
+    "assessment.supportedSemiTandem.setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This test is measured by hand."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu test elle ölçülür."
+          }
+        }
+      }
+    },
+    "assessment.useManual": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure by hand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elle ölç"
+          }
+        }
+      }
+    },
     "common.back": {
       "extractionState": "manual",
       "localizations": {
@@ -1633,6 +2619,108 @@
         }
       }
     },
+    "measurement.degrees %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld°"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld°"
+          }
+        }
+      }
+    },
+    "measurement.level.1": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Less than halfway"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yarıdan az"
+          }
+        }
+      }
+    },
+    "measurement.level.2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most of the way up"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Büyük ölçüde yukarıda"
+          }
+        }
+      }
+    },
+    "measurement.level.3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arm fully overhead, beside my ear"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolum tamamen yukarıda, kulağımın yanında"
+          }
+        }
+      }
+    },
+    "measurement.reps %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld reps"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld tekrar"
+          }
+        }
+      }
+    },
+    "measurement.seconds %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ s"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sn"
+          }
+        }
+      }
+    },
     "onboarding.activity.title": {
       "extractionState": "manual",
       "localizations": {
@@ -2738,6 +3826,414 @@
         }
       }
     },
+    "paywall.benefit.adapt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic, safe progression"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otomatik ve güvenli ilerleme"
+          }
+        }
+      }
+    },
+    "paywall.benefit.health": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save workouts to Apple Health"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenmanları Apple Sağlık'a kaydetme"
+          }
+        }
+      }
+    },
+    "paywall.benefit.plan": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your personal weekly plan"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kişisel haftalık planın"
+          }
+        }
+      }
+    },
+    "paywall.benefit.progress": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Before-and-after comparisons and charts"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önce-sonra karşılaştırmaları ve grafikler"
+          }
+        }
+      }
+    },
+    "paywall.benefit.reassess": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capacity check every four weeks"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dört haftada bir kapasite değerlendirmesi"
+          }
+        }
+      }
+    },
+    "paywall.failed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The purchase couldn't be completed. You haven't been charged."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın alım tamamlanamadı. Ücret alınmadı."
+          }
+        }
+      }
+    },
+    "paywall.manage": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage subscription"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aboneliği yönet"
+          }
+        }
+      }
+    },
+    "paywall.monthlyEquivalent %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Just %@ per month"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aylık yalnızca %@"
+          }
+        }
+      }
+    },
+    "paywall.nothingToRestore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No active subscription was found for this Apple Account."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Apple hesabında etkin bir abonelik bulunamadı."
+          }
+        }
+      }
+    },
+    "paywall.pending": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your purchase is waiting for approval."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın alımın onay bekliyor."
+          }
+        }
+      }
+    },
+    "paywall.pricePer %@ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ / %2$@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ / %2$@"
+          }
+        }
+      }
+    },
+    "paywall.renewalTerms": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment is charged to your Apple Account when you confirm the purchase. The subscription renews automatically unless it is cancelled at least 24 hours before the end of the current period; renewal is charged within 24 hours before the period ends. If you start a free trial, any unused part of it ends when you buy a subscription. You can manage or cancel in your Apple Account settings."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ödeme, satın almayı onayladığında Apple hesabından alınır. Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir; yenileme ücreti dönem bitmeden önceki 24 saat içinde alınır. Ücretsiz deneme başlatırsan, abonelik satın aldığında denemenin kullanılmayan kısmı sona erer. Aboneliğini Apple hesap ayarlarından yönetebilir veya iptal edebilirsin."
+          }
+        }
+      }
+    },
+    "paywall.restore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore purchases"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın alımları geri yükle"
+          }
+        }
+      }
+    },
+    "paywall.retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekrar dene"
+          }
+        }
+      }
+    },
+    "paywall.startTrial": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start free trial"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ücretsiz denemeyi başlat"
+          }
+        }
+      }
+    },
+    "paywall.subscribe": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribe"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abone ol"
+          }
+        }
+      }
+    },
+    "paywall.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep training with a plan that adapts to you, and see your progress in numbers."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sana uyum sağlayan bir planla devam et ve gelişimini rakamlarla gör."
+          }
+        }
+      }
+    },
+    "paywall.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strengthspan Pro"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strengthspan Pro"
+          }
+        }
+      }
+    },
+    "paywall.trial %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Includes a free trial: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ücretsiz deneme dahil: %@"
+          }
+        }
+      }
+    },
+    "paywall.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plans couldn't be loaded. Check your connection and try again."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planlar yüklenemedi. Bağlantını kontrol edip tekrar dene."
+          }
+        }
+      }
+    },
+    "period.days %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld days"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld gün"
+          }
+        }
+      }
+    },
+    "period.months %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld months"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ay"
+          }
+        }
+      }
+    },
+    "period.weeks %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld weeks"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld hafta"
+          }
+        }
+      }
+    },
+    "period.years %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld years"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld yıl"
+          }
+        }
+      }
+    },
     "player.announce.finished": {
       "extractionState": "manual",
       "localizations": {
@@ -3220,13 +4716,200 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Scores only compare you with your own earlier measurements. They are not a medical assessment."
+            "value": "Values only compare you with your own earlier measurements taken the same way. They are not a medical assessment."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Puanlar seni yalnızca kendi önceki ölçümlerinle karşılaştırır. Tıbbi bir değerlendirme değildir."
+            "value": "Değerler seni yalnızca aynı şekilde yapılmış kendi önceki ölçümlerinle karşılaştırır. Tıbbi bir değerlendirme değildir."
+          }
+        }
+      }
+    },
+    "progress.chart.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Results over time"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaman içindeki sonuçlar"
+          }
+        }
+      }
+    },
+    "progress.consistency.empty": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your training history will appear here."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenman geçmişin burada görünecek."
+          }
+        }
+      }
+    },
+    "progress.consistency.last30 %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last 30 days: %1$lld of %2$lld planned sessions"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son 30 gün: %2$lld planlı seanstan %1$lld tanesi"
+          }
+        }
+      }
+    },
+    "progress.consistency.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every session counts — there are no streaks to lose."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her seans önemli — kaybedilecek bir seri yok."
+          }
+        }
+      }
+    },
+    "progress.consistency.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consistency"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutarlılık"
+          }
+        }
+      }
+    },
+    "progress.locked.action": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See Pro plans"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro planlarına bak"
+          }
+        }
+      }
+    },
+    "progress.locked.change": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See how much you've changed with Strengthspan Pro."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ne kadar değiştiğini Strengthspan Pro ile gör."
+          }
+        }
+      }
+    },
+    "progress.locked.proof": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your four-week progress report is part of Strengthspan Pro."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dört haftalık gelişim raporun Strengthspan Pro'nun bir parçası."
+          }
+        }
+      }
+    },
+    "progress.metric.baseline %@ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baseline: %1$@ on %2$@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlangıç: %1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "progress.metric.camera": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera estimate"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera tahmini"
+          }
+        }
+      }
+    },
+    "progress.metric.first": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First measurement. Reassess in four weeks to see your change."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk ölçüm. Değişimini görmek için dört hafta sonra yeniden değerlendir."
           }
         }
       }
@@ -3244,6 +4927,91 @@
           "stringUnit": {
             "state": "translated",
             "value": "Henüz yeterli ölçüm yok"
+          }
+        }
+      }
+    },
+    "progress.metric.manual": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measured by you"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senin ölçümün"
+          }
+        }
+      }
+    },
+    "progress.metric.notComparable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Earlier results were measured differently, so they aren't compared with this one."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önceki sonuçlar farklı şekilde ölçüldüğü için bununla karşılaştırılmıyor."
+          }
+        }
+      }
+    },
+    "progress.proof.noLoads": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weights you use with dumbbells will appear here."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dambılla kullandığın ağırlıklar burada görünecek."
+          }
+        }
+      }
+    },
+    "progress.proof.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proof of progress"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelişimin kanıtı"
+          }
+        }
+      }
+    },
+    "progress.proof.workouts %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workouts in the last 4 weeks: %1$lld of %2$lld"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son 4 haftadaki antrenmanlar: %2$lld seanstan %1$lld tanesi"
           }
         }
       }
@@ -3537,6 +5305,57 @@
         }
       }
     },
+    "settings.appleHealth": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save workouts to Apple Health"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenmanları Apple Sağlık'a kaydet"
+          }
+        }
+      }
+    },
+    "settings.appleHealth.denied": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Health access wasn't allowed. You can change this in the Health app under Sharing › Apps."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Sağlık erişimine izin verilmedi. Bunu Sağlık uygulamasında Paylaşım › Uygulamalar bölümünden değiştirebilirsin."
+          }
+        }
+      }
+    },
+    "settings.appleHealth.footer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strengthspan only writes completed workouts and never reads your health data. Pro feature."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strengthspan yalnızca tamamlanan antrenmanları yazar, sağlık verilerini asla okumaz. Pro özelliği."
+          }
+        }
+      }
+    },
     "settings.deleteAll": {
       "extractionState": "manual",
       "localizations": {
@@ -3652,6 +5471,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Strengthspan bir fitness ve sağlıklı yaşam uygulamasıdır. Herhangi bir tıbbi durumu teşhis etmez veya tedavi etmez."
+          }
+        }
+      }
+    },
+    "settings.export": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export my data"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verilerimi dışa aktar"
+          }
+        }
+      }
+    },
+    "settings.export.failure": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your data couldn't be exported. Please try again."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verilerin dışa aktarılamadı. Lütfen tekrar dene."
           }
         }
       }
@@ -3792,6 +5645,23 @@
         }
       }
     },
+    "settings.section.subscription": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscription"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abonelik"
+          }
+        }
+      }
+    },
     "settings.section.workout": {
       "extractionState": "manual",
       "localizations": {
@@ -3805,6 +5675,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "Antrenman"
+          }
+        }
+      }
+    },
+    "settings.subscription.free": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ücretsiz"
+          }
+        }
+      }
+    },
+    "settings.subscription.pro": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strengthspan Pro"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strengthspan Pro"
+          }
+        }
+      }
+    },
+    "settings.subscription.seePlans": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See Pro plans"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro planlarına bak"
+          }
+        }
+      }
+    },
+    "settings.subscription.status": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan"
           }
         }
       }
@@ -4030,6 +5968,23 @@
         }
       }
     },
+    "today.assessment.reassess": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reassess my capacity"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapasitemi yeniden değerlendir"
+          }
+        }
+      }
+    },
     "today.assessment.scheduled %@": {
       "extractionState": "manual",
       "localizations": {
@@ -4043,6 +5998,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Önerilen tarih: %@."
+          }
+        }
+      }
+    },
+    "today.assessment.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start capacity check"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapasite değerlendirmesine başla"
           }
         }
       }
@@ -4179,6 +6151,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Henüz yeterli ölçüm yok."
+          }
+        }
+      }
+    },
+    "today.progress.freeWorkouts %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free sample workouts left: %lld"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalan ücretsiz örnek antrenman: %lld"
           }
         }
       }

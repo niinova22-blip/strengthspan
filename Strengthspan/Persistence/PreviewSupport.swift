@@ -45,9 +45,11 @@ enum PreviewSupport {
         let strength = CapacityMetric(
             computedAt: assessedAt,
             dimension: .strength,
-            score: 48,
-            reliability: .moderate,
-            scoringModelVersion: "preview"
+            assessmentKey: AssessmentCatalog.chairStand.key,
+            value: 12,
+            unit: .repetitions,
+            method: .manual,
+            reliability: .moderate
         )
         strength.sourceSession = session
         context.insert(strength)
