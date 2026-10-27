@@ -35,7 +35,7 @@ struct TrainingStoreTests {
         )
     }
 
-    private func plan(at date: Date) throws -> WorkoutPlan? {
+    private func currentPlan(at date: Date) throws -> WorkoutPlan? {
         if case .ready(let plan) = try store.ensureCurrentPlan(now: date) { return plan }
         return nil
     }
@@ -48,7 +48,7 @@ struct TrainingStoreTests {
 
     @Test func onboardingCreatesProfileAndFirstWeek() throws {
         try store.completeOnboarding(answers(), now: monday)
-        let plan = try #require(try plan(at: monday))
+        let plan = try #require(try currentPlan(at: monday))
         #expect(plan.sessions.count == 3)
         #expect(plan.sessions.allSatisfy { !$0.sets.isEmpty })
         #expect(plan.generatorVersion == PlanGenerator.version)
@@ -56,8 +56,8 @@ struct TrainingStoreTests {
 
     @Test func theSamePlanIsReturnedWithinThePeriod() throws {
         try store.completeOnboarding(answers(), now: monday)
-        let first = try #require(try plan(at: monday))
-        let later = try #require(try plan(at: calendar.date(byAdding: .day, value: 3, to: monday)!))
+        let first = try #require(try currentPlan(at: monday))
+        let later = try #require(try currentPlan(at: calendar.date(byAdding: .day, value: 3, to: monday)!))
         #expect(first.id == later.id)
         #expect(try container.mainContext.fetchCount(FetchDescriptor<WorkoutPlan>()) == 1)
     }
@@ -69,19 +69,19 @@ struct TrainingStoreTests {
             return
         }
         try store.confirmProfessionalClearance(now: monday)
-        #expect(try plan(at: monday) != nil)
+        #expect(try currentPlan(at: monday) != nil)
         #expect(try store.profile()?.professionalClearanceConfirmedAt == monday)
     }
 
     @Test func onboardingPainIsRespected() throws {
         try store.completeOnboarding(answers(screeningYes: [.jointPain], painRegions: [.knee]), now: monday)
-        let plan = try #require(try plan(at: monday))
+        let plan = try #require(try currentPlan(at: monday))
         #expect(!loadedRegions(plan).contains(.knee))
     }
 
     @Test func newPainInFeedbackReplansWithoutThatRegion() throws {
         try store.completeOnboarding(answers(), now: monday)
-        let plan = try #require(try plan(at: monday))
+        let plan = try #require(try currentPlan(at: monday))
         #expect(loadedRegions(plan).contains(.shoulder))
         let session = try #require(plan.sessions.min { $0.scheduledDate < $1.scheduledDate })
 
@@ -93,7 +93,7 @@ struct TrainingStoreTests {
         )
 
         #expect(decision.newConstraints == [ConstraintSpec(kind: .pain, region: .shoulder)])
-        let replanned = try #require(try plan(at: monday))
+        let replanned = try #require(try currentPlan(at: monday))
         #expect(replanned.id != plan.id)
         #expect(!loadedRegions(replanned).contains(.shoulder))
         // Trained today, so the new plan starts tomorrow.
@@ -102,7 +102,7 @@ struct TrainingStoreTests {
 
     @Test func warningSignsPauseTrainingUntilResolved() throws {
         try store.completeOnboarding(answers(), now: monday)
-        let session = try #require(try plan(at: monday)?.sessions.first)
+        let session = try #require(try currentPlan(at: monday)?.sessions.first)
         try store.start(session, now: monday)
 
         let decision = try store.stop(session, reason: .warningSigns, now: monday)
@@ -114,12 +114,12 @@ struct TrainingStoreTests {
             return
         }
         try store.resolveDizziness(now: monday)
-        #expect(try plan(at: monday) != nil)
+        #expect(try currentPlan(at: monday) != nil)
     }
 
     @Test func notFeelingUpToItBeforeStartingSkipsTheSession() throws {
         try store.completeOnboarding(answers(), now: monday)
-        let session = try #require(try plan(at: monday)?.sessions.first)
+        let session = try #require(try currentPlan(at: monday)?.sessions.first)
         let decision = try store.stop(session, reason: .generallyUnwell, now: monday)
         #expect(decision == .none)
         #expect(session.status == .skipped)
@@ -129,7 +129,7 @@ struct TrainingStoreTests {
         try store.completeOnboarding(answers(), now: monday)
         var day = monday
         for _ in 0..<2 {
-            let plan = try #require(try plan(at: day))
+            let plan = try #require(try currentPlan(at: day))
             let session = try #require(plan.sessions.filter { $0.status == .planned }.min { $0.scheduledDate < $1.scheduledDate })
             for set in session.sets { try store.completeSet(set, loadKg: nil, now: session.scheduledDate) }
             try store.finish(session, feedback: SessionFeedbackInput(rpe: 6, discomfort: .noDiscomfort, discomfortRegions: [], dizzinessReported: false), note: nil, now: session.scheduledDate)
@@ -144,11 +144,11 @@ struct TrainingStoreTests {
 
     @Test func replanningAfterTodaysWorkoutIsStable() throws {
         try store.completeOnboarding(answers(), now: monday)
-        let session = try #require(try plan(at: monday)?.sessions.first)
+        let session = try #require(try currentPlan(at: monday)?.sessions.first)
         try store.finish(session, feedback: SessionFeedbackInput(rpe: 6, discomfort: .newOrSharp, discomfortRegions: [.knee], dizzinessReported: false), note: nil, now: monday)
 
-        let first = try #require(try plan(at: monday))
-        let again = try #require(try plan(at: monday.addingTimeInterval(3_600)))
+        let first = try #require(try currentPlan(at: monday))
+        let again = try #require(try currentPlan(at: monday.addingTimeInterval(3_600)))
         #expect(first.id == again.id)
     }
 }

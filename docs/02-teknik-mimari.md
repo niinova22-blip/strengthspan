@@ -104,7 +104,7 @@ STRENGTHSPAN/
 | Tür | Modeller | Depolama | Neden |
 |---|---|---|---|
 | **Kullanıcı verisi** | UserProfile, UserPreferences, SafetyConstraint, WorkoutPlan, WorkoutSession, WorkoutSet, WorkoutFeedback, AssessmentSession, AssessmentResult, CapacityMetric, ProgressSnapshot | SwiftData | Kişiye ait; dışa aktarılır ve silinir |
-| **Uygulama içeriği** | Exercise, ExerciseVariant, AssessmentDefinition | Pakete gömülü, sürümlü JSON → `Codable` struct | Uygulama güncellemesiyle birlikte gelir. Veritabanına kopyalamak gereksiz migrasyon ve senkron hatası riski yaratır |
+| **Uygulama içeriği** | Exercise, ExerciseVariant, AssessmentDefinition | Swift kodunda sürümlü statik katalog (`Content/ExerciseCatalog.swift`, `version`) | Uygulama güncellemesiyle gelir. Derleme sırasında doğrulanır ve Windows'ta da test edilebilir. Veritabanına kopyalamak gereksiz migrasyon riski yaratırdı. *(Faz 2 kararı: başta düşünülen JSON yerine Swift; içerik büyürse JSON'a taşınabilir)* |
 | **Türetilmiş durum** | SubscriptionEntitlement | Bellekte, StoreKit'ten türetilir | Gerçeğin kaynağı imzalı StoreKit işlemleridir. Yerel kopya tutmak manipülasyona ve bayat duruma açık olurdu |
 
 Kullanıcı verisi içeriğe **sabit string anahtarlarla** referans verir (`exerciseKey`, `variantKey`, `assessmentKey`, `definitionVersion`). Katalog değişse bile geçmiş kayıtlar anlamını korur.
@@ -161,6 +161,19 @@ Kodun tamamı `Strengthspan/Persistence/Schema/` altında yer alıyor.
 - Store, Application Support altında iOS varsayılan veri korumasıyla (Complete Until First User Authentication) tutulur. Faz 6'da `NSFileProtectionComplete` değerlendirilecek (arka planda HealthKit yazımıyla çakışma riski kontrol edilmeli).
 - **Silme:** `PersonalDataEraser` tüm kullanıcı modellerini siler (Faz 1'de hazır ve test edildi).
 - **Dışa aktarma:** Faz 6'da `Codable` DTO'larla JSON üretilecek ve `ShareLink` ile paylaşılacak.
+
+## 4.6 Faz 2 bileşenleri
+
+| Katman | Dosya | Görev |
+|---|---|---|
+| İçerik | `Content/Exercise.swift`, `ExerciseCatalog.swift` | 17 hareket, 33 varyant. Yalnızca ayakta veya sandalyede yapılan, yere inmeyi gerektirmeyen hareketler. Her varyant için yüklenen bölgeler ve destek bilgisi tutulur |
+| Güvenlik | `Safety/Screening.swift`, `SafetyEngine.swift` | Tarama, plan izni, ağrılı bölge filtresi, denge seviye tavanı, geri bildirim ve durdurma kararları |
+| Progresyon | `Progression/ProgressionEngine.swift` | Geçmişten yeniden hesaplanan seviye/tekrar durumu (saklanan gizli durum yok) |
+| Plan | `Progression/PlanGenerator.swift` | 7 günlük plan: şablon (10/20/30 dk), rotasyon, geri dönüş haftası, süre kırpma (+%10) |
+| Köprü | `Persistence/TrainingStore.swift` | Plan üretimi/saklama, geri bildirim, güvenlik kısıtları, yeniden planlama |
+| UI | `Features/Onboarding`, `Features/Workout`, `Features/Today` | Onboarding, Workout Player (sesli yönlendirme, zamanlayıcı, dinlenme), geri bildirim, güvenlik ekranları |
+
+Güvenlik, progresyon ve plan kodu yalnızca Foundation kullanır. Bu sayede Windows'taki Swift araç zincirinde de derlenip test edilir.
 
 ## 5. Eşzamanlılık
 - UI ve `ModelContext.mainContext` → `@MainActor`.
