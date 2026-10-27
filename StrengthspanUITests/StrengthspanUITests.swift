@@ -115,8 +115,10 @@ final class StrengthspanUITests: XCTestCase {
         XCTAssertTrue(app.tabBars.firstMatch.waitForExistence(timeout: 5))
         audit(app, screen: "Today", failures: &failedScreens)
         app.tabBars.firstMatch.buttons["Progress"].tap()
+        settle(on: "Progress", in: app)
         audit(app, screen: "Progress", failures: &failedScreens)
         app.tabBars.firstMatch.buttons["Settings"].tap()
+        settle(on: "Settings", in: app)
         audit(app, screen: "Settings", failures: &failedScreens)
         app.tabBars.firstMatch.buttons["Today"].tap()
 
@@ -127,6 +129,13 @@ final class StrengthspanUITests: XCTestCase {
         audit(app, screen: "Workout exercise", failures: &failedScreens)
 
         XCTAssertEqual(failedScreens, [], "Accessibility audit findings — see A11Y lines in the log")
+    }
+
+    /// Waits for a tab's navigation bar and lets the transition finish, so the audit sees the final layout.
+    @MainActor
+    private func settle(on title: String, in app: XCUIApplication) {
+        XCTAssertTrue(app.navigationBars[title].waitForExistence(timeout: 5))
+        Thread.sleep(forTimeInterval: 1.5)
     }
 
     /// Audits one screen and keeps going, so a single run reports findings for every screen.
