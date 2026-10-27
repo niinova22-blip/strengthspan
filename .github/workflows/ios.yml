@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Gizlilik denetimi
+        run: bash scripts/check-privacy.sh
+
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable

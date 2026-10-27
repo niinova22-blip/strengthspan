@@ -104,6 +104,37 @@ final class StrengthspanUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Arm fully overhead, beside my ear"].waitForExistence(timeout: 5))
     }
 
+    /// Xcode's automated accessibility audit (contrast, labels, hit areas, Dynamic Type, …) on every main screen.
+    @MainActor
+    func testMainScreensPassTheAccessibilityAudit() throws {
+        let app = launch(language: "en", locale: "en_US")
+        try audit(app, screen: "Welcome")
+        completeOnboarding(app)
+
+        XCTAssertTrue(app.tabBars.firstMatch.waitForExistence(timeout: 5))
+        try audit(app, screen: "Today")
+        app.tabBars.firstMatch.buttons["Progress"].tap()
+        try audit(app, screen: "Progress")
+        app.tabBars.firstMatch.buttons["Settings"].tap()
+        try audit(app, screen: "Settings")
+        app.tabBars.firstMatch.buttons["Today"].tap()
+
+        tap("today.workout.start", in: app)
+        XCTAssertTrue(app.buttons["player.checkIn.ok"].waitForExistence(timeout: 5))
+        try audit(app, screen: "Workout check-in")
+        tap("player.checkIn.ok", in: app)
+        try audit(app, screen: "Workout exercise")
+    }
+
+    @MainActor
+    private func audit(_ app: XCUIApplication, screen: String) throws {
+        try app.performAccessibilityAudit { issue in
+            // Report every finding with the screen it came from, then fail on it.
+            print("A11Y [\(screen)] \(issue.auditType) — \(issue.compactDescription) — \(issue.element?.debugDescription.prefix(160) ?? "no element")")
+            return false
+        }
+    }
+
     @MainActor
     func testLaunchesInTurkish() throws {
         let app = launch(language: "tr", locale: "tr_TR")

@@ -30,6 +30,26 @@ Her `main` push'unda ve PR'da `.github/workflows/ios.yml` çalışır: XcodeGen 
 | StoreKit test | `StoreKit/Strengthspan.storekit` (Run şemasına bağlı) |
 | Yasal sayfalar | [Gizlilik](https://niinova22-blip.github.io/strengthspan/privacy.html) · [Koşullar](https://niinova22-blip.github.io/strengthspan/terms.html) · [Destek](https://niinova22-blip.github.io/strengthspan/support.html) — kaynak: `docs/*.html` |
 
+## TestFlight
+
+`.github/workflows/testflight.yml` elle tetiklenir (Actions › TestFlight › Run workflow). Her çalışma:
+
+1. App Store Connect API ile **bu çalışmaya özel** bir Apple Distribution sertifikası ve App Store profili oluşturur (`scripts/asc_signing.py`).
+2. Arşivler, imzalar, imzayı doğrular ve `altool` ile yükler.
+3. "Strengthspan Internal" iç test grubunu (tüm build'lere erişimli, ekip üyeleri eklenmiş) hazırlar.
+4. Çalışma sonunda profili siler, sertifikayı iptal eder. Repoda imzalama malzemesi saklanmaz.
+
+Gereken repo secret'ları (bir kez):
+
+```bash
+gh secret set ASC_KEY_ID      -R niinova22-blip/strengthspan --body "<Key ID>"
+gh secret set ASC_ISSUER_ID   -R niinova22-blip/strengthspan --body "<Issuer ID>"
+gh secret set ASC_PRIVATE_KEY -R niinova22-blip/strengthspan < /yol/AuthKey_<Key ID>.p8
+gh workflow run testflight.yml -R niinova22-blip/strengthspan
+```
+
+Anahtarın App Store Connect › Users and Access › Integrations altında **Admin** rolünde olması gerekir (sertifika ve profil oluşturmak için).
+
 ## Yerel geliştirme (isteğe bağlı, Mac)
 
 - macOS + **Xcode 16 veya üzeri** (Swift Testing ve `@Entry` makrosu için)

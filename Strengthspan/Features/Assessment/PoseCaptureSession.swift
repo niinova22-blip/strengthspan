@@ -1,4 +1,4 @@
-import AVFoundation
+@preconcurrency import AVFoundation
 import Vision
 
 /// Front-camera capture with on-device body-pose detection.
@@ -42,13 +42,13 @@ final class PoseCaptureSession: NSObject, AVCaptureVideoDataOutputSampleBufferDe
     }
 
     func start() {
-        queue.async { [session] in
+        queue.async { [self] in
             if !session.isRunning { session.startRunning() }
         }
     }
 
     func stop() {
-        queue.async { [session] in
+        queue.async { [self] in
             if session.isRunning { session.stopRunning() }
         }
     }

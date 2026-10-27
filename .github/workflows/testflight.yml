@@ -1,0 +1,154 @@
+name: TestFlight
+
+# Builds, signs and uploads to TestFlight. Signing material is created for this run only through
+# the App Store Connect API and removed at the end (scripts/asc_signing.py).
+# Required secrets: ASC_KEY_ID, ASC_ISSUER_ID, ASC_PRIVATE_KEY.
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: macos-15
+    timeout-minutes: 60
+    env:
+      APPLE_TEAM_ID: ML3UZXMU3D
+      BUNDLE_ID: com.strengthspan.app
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+      SIGNING_DIR: ${{ runner.temp }}/signing
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ayarları denetle
+        run: |
+          for name in ASC_KEY_ID ASC_ISSUER_ID ASC_PRIVATE_KEY; do
+            if [ -z "${!name}" ]; then
+              echo "::error::$name secret tanımlı değil (README › TestFlight)"
+              exit 1
+            fi
+          done
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Araçları kur
+        run: |
+          brew install xcodegen
+          python3 -m pip install --quiet --break-system-packages pyjwt cryptography
+
+      - name: Xcode projesini üret
+        run: xcodegen generate
+
+      - name: Geçici imzalama sertifikası ve profili oluştur
+        run: python3 scripts/asc_signing.py create "$SIGNING_DIR"
+
+      - name: Anahtar zincirine kur
+        run: |
+          PASSWORD=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['password'])" "$SIGNING_DIR/signing.json")
+          PROFILE_NAME=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['profileName'])" "$SIGNING_DIR/signing.json")
+          echo "PROFILE_NAME=$PROFILE_NAME" >> "$GITHUB_ENV"
+
+          KEYCHAIN="$RUNNER_TEMP/signing.keychain-db"
+          KEYCHAIN_PASSWORD=$(openssl rand -hex 16)
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$SIGNING_DIR/cert.p12" -P "$PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" > /dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+
+          IDENTITY=$(security find-identity -v -p codesigning "$KEYCHAIN" | awk 'NR==1 {print $2}')
+          if [ -z "$IDENTITY" ]; then
+            echo "::error::İmzalama kimliği bulunamadı"
+            exit 1
+          fi
+          echo "SIGN_IDENTITY=$IDENTITY" >> "$GITHUB_ENV"
+          echo "KEYCHAIN=$KEYCHAIN" >> "$GITHUB_ENV"
+
+          for dir in "$HOME/Library/MobileDevice/Provisioning Profiles" "$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles"; do
+            mkdir -p "$dir"
+            cp "$SIGNING_DIR/profile.mobileprovision" "$dir/strengthspan-appstore.mobileprovision"
+          done
+
+      - name: Arşivle
+        run: |
+          set -o pipefail
+          xcodebuild archive \
+            -project Strengthspan.xcodeproj \
+            -scheme Strengthspan \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/Strengthspan.xcarchive" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="$SIGN_IDENTITY" \
+            OTHER_CODE_SIGN_FLAGS="--keychain $KEYCHAIN" \
+            PROVISIONING_PROFILE_SPECIFIER="$PROFILE_NAME" \
+            CURRENT_PROJECT_VERSION="${{ github.run_number }}"
+
+      - name: IPA üret ve imzayı doğrula
+        run: |
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>destination</key><string>export</string>
+            <key>teamID</key><string>$APPLE_TEAM_ID</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>signingCertificate</key><string>$SIGN_IDENTITY</string>
+            <key>provisioningProfiles</key>
+            <dict>
+              <key>$BUNDLE_ID</key><string>$PROFILE_NAME</string>
+            </dict>
+            <key>manageAppVersionAndBuildNumber</key><false/>
+          </dict>
+          </plist>
+          EOF
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/Strengthspan.xcarchive" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" \
+            -exportPath "$RUNNER_TEMP/export"
+
+          cd "$RUNNER_TEMP/export"
+          rm -rf ipa && mkdir ipa && unzip -q Strengthspan.ipa -d ipa
+          APP=ipa/Payload/Strengthspan.app
+
+          # The team name contains a non-ASCII character (Ö); codesign's generated designated
+          # requirement can then fail to match the certificate (ITMS-90035). Re-sign with a Team ID rule.
+          if ! codesign --verify --deep --strict "$APP" 2>/dev/null; then
+            echo "Designated requirement sertifikayla eşleşmiyor; Team ID tabanlı kuralla yeniden imzalanıyor."
+            codesign -d --entitlements - --xml "$APP" > "$RUNNER_TEMP/entitlements.plist" 2>/dev/null
+            codesign --force --sign "$SIGN_IDENTITY" --keychain "$KEYCHAIN" \
+              --entitlements "$RUNNER_TEMP/entitlements.plist" \
+              --requirements "=designated => anchor apple generic and identifier \"$BUNDLE_ID\" and certificate leaf[subject.OU] = \"$APPLE_TEAM_ID\" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */" \
+              "$APP"
+            rm Strengthspan.ipa
+            (cd ipa && zip -qry ../Strengthspan.ipa .)
+          fi
+
+          codesign -dvv "$APP" 2>&1 | grep -E "^Authority=|^Identifier="
+          codesign -d --entitlements - --xml "$APP" 2>/dev/null | plutil -p -
+          codesign --verify --deep --strict --verbose=2 "$APP"
+
+      - name: TestFlight'a yükle
+        run: |
+          mkdir -p ~/.appstoreconnect/private_keys
+          printf '%s' "$ASC_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8
+          xcrun altool --upload-app -f "$RUNNER_TEMP/export/Strengthspan.ipa" -t ios \
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+
+      - name: İç test grubunu hazırla
+        run: python3 scripts/asc_signing.py testflight
+
+      - name: Geçici imzalama malzemesini kaldır
+        if: always()
+        run: |
+          python3 scripts/asc_signing.py cleanup "$SIGNING_DIR" || true
+          rm -rf ~/.appstoreconnect/private_keys
+          rm -f "$HOME/Library/MobileDevice/Provisioning Profiles/strengthspan-appstore.mobileprovision" \
+                "$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles/strengthspan-appstore.mobileprovision"
+          if [ -n "$KEYCHAIN" ]; then security delete-keychain "$KEYCHAIN" || true; fi
