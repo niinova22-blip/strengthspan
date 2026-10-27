@@ -1,6 +1,108 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "common.back": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri"
+          }
+        }
+      }
+    },
+    "common.cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vazgeç"
+          }
+        }
+      }
+    },
+    "common.close": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapat"
+          }
+        }
+      }
+    },
+    "common.continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devam"
+          }
+        }
+      }
+    },
+    "common.done": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamam"
+          }
+        }
+      }
+    },
+    "common.no": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hayır"
+          }
+        }
+      }
+    },
     "common.ok": {
       "extractionState": "manual",
       "localizations": {
@@ -14,6 +116,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tamam"
+          }
+        }
+      }
+    },
+    "common.yes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evet"
           }
         }
       }
@@ -86,6 +205,2998 @@
         }
       }
     },
+    "exercise.armCircles.standing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arm Circles"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kol Çevirme"
+          }
+        }
+      }
+    },
+    "exercise.armCircles.standing.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand with your arms out to the sides. Make small, slow circles forward, then backward. Keep your shoulders relaxed."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kollarını yana aç. Önce öne, sonra geriye doğru küçük ve yavaş daireler çiz. Omuzlarını gevşek tut."
+          }
+        }
+      }
+    },
+    "exercise.breathing.slow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow Breathing"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yavaş Nefes"
+          }
+        }
+      }
+    },
+    "exercise.breathing.slow.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit comfortably. Breathe in through your nose for a count of four and out slowly for a count of six. Let your shoulders relax."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rahatça otur. Burnundan dört sayıda nefes al, altı sayıda yavaşça ver. Omuzlarını gevşet."
+          }
+        }
+      }
+    },
+    "exercise.calfRaise.dumbbell": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dumbbell Calf Raise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dambıllı Topuk Kaldırma"
+          }
+        }
+      }
+    },
+    "exercise.calfRaise.dumbbell.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a dumbbell in one hand and a chair or counter with the other. Rise onto your toes and lower slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir elinde dambıl, diğer elinle sandalyeye ya da tezgâha tutun. Parmak uçlarında yüksel ve yavaşça in."
+          }
+        }
+      }
+    },
+    "exercise.calfRaise.pause": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calf Raise with Pause"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekletmeli Topuk Kaldırma"
+          }
+        }
+      }
+    },
+    "exercise.calfRaise.pause.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Holding on for support, rise onto your toes, pause for two seconds at the top and lower slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desteğe tutunarak parmak uçlarında yüksel, yukarıda iki saniye bekle ve yavaşça in."
+          }
+        }
+      }
+    },
+    "exercise.calfRaise.supported": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Calf Raise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekli Topuk Kaldırma"
+          }
+        }
+      }
+    },
+    "exercise.calfRaise.supported.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a chair or counter. Rise slowly onto the balls of your feet, then lower your heels with control."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir sandalyeye ya da tezgâha tutun. Yavaşça parmak uçlarında yüksel, sonra topuklarını kontrollü şekilde indir."
+          }
+        }
+      }
+    },
+    "exercise.heelToe.counter": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heel-to-Toe Walk"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Topuk-Parmak Yürüyüşü"
+          }
+        }
+      }
+    },
+    "exercise.heelToe.counter.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Walk slowly along a kitchen counter, placing each heel just in front of the toes of the other foot. Keep one hand on the counter."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mutfak tezgâhı boyunca yavaşça yürü; her adımda topuğunu diğer ayağının parmaklarının hemen önüne koy. Bir elin tezgâhta kalsın."
+          }
+        }
+      }
+    },
+    "exercise.hinge.dumbbell": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dumbbell Hip Hinge"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dambıllı Menteşe Hareketi"
+          }
+        }
+      }
+    },
+    "exercise.hinge.dumbbell.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold dumbbells in front of your thighs. Push your hips back and lower them along your legs to just below the knees with a straight back, then stand tall."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dambılları uyluklarının önünde tut. Kalçanı geriye it ve dambılları bacakların boyunca dizlerin hemen altına indir; sırtın düz olsun, sonra doğrul."
+          }
+        }
+      }
+    },
+    "exercise.hinge.handsOnThighs": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hip Hinge"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalçadan Menteşe Hareketi"
+          }
+        }
+      }
+    },
+    "exercise.hinge.handsOnThighs.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand with your hands on your thighs and knees soft. Push your hips back and let your hands slide toward your knees, keeping your back straight. Stand up by squeezing your glutes."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ellerin uyluklarında, dizlerin hafif bükülü dur. Kalçanı geriye it ve sırtını düz tutarak ellerini dizlerine doğru kaydır. Kalçanı sıkarak doğrul."
+          }
+        }
+      }
+    },
+    "exercise.hinge.slowTempo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow Hip Hinge"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yavaş Menteşe Hareketi"
+          }
+        }
+      }
+    },
+    "exercise.hinge.slowTempo.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do the hip hinge, taking three slow seconds on the way down. Keep your back straight throughout."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menteşe hareketini inerken üç saniye sürecek şekilde yavaş yap. Sırtını baştan sona düz tut."
+          }
+        }
+      }
+    },
+    "exercise.hipCircles.supported": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Hip Circles"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekli Kalça Çevirme"
+          }
+        }
+      }
+    },
+    "exercise.hipCircles.supported.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a sturdy chair. With feet hip-width apart, slowly circle your hips in one direction, then the other."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sağlam bir sandalyeye tutun. Ayakların kalça genişliğinde, kalçanı yavaşça bir yöne, sonra diğer yöne döndür."
+          }
+        }
+      }
+    },
+    "exercise.march.inPlace": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "March in Place"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yerinde Yürüyüş"
+          }
+        }
+      }
+    },
+    "exercise.march.inPlace.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand tall and lift your knees one at a time at an easy pace. Swing your arms gently. Hold a chair if you like."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dik dur ve dizlerini sırayla, rahat bir tempoda kaldır. Kollarını hafifçe salla. İstersen bir sandalyeye tutun."
+          }
+        }
+      }
+    },
+    "exercise.overhead.band": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Band Overhead Press"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bantla Baş Üstü İtiş"
+          }
+        }
+      }
+    },
+    "exercise.overhead.band.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand on the middle of the band holding an end in each hand at shoulder height. Press up overhead without arching your back, then lower slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bandın ortasına bas, uçlarını omuz hizasında tut. Belini çukurlaştırmadan baş üstüne it, sonra yavaşça indir."
+          }
+        }
+      }
+    },
+    "exercise.overhead.dumbbellSeated": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seated Dumbbell Press"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oturarak Dambıl İtişi"
+          }
+        }
+      }
+    },
+    "exercise.overhead.dumbbellSeated.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit tall in a chair with dumbbells at shoulder height. Press them up until your arms are almost straight, then lower slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sandalyede dik otur, dambıllar omuz hizasında olsun. Kolların neredeyse düzleşene kadar yukarı it, sonra yavaşça indir."
+          }
+        }
+      }
+    },
+    "exercise.overhead.wallSlide": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wall Slide"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duvarda Kol Kaydırma"
+          }
+        }
+      }
+    },
+    "exercise.overhead.wallSlide.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand with your back to a wall, arms bent and hands at shoulder height. Slide your arms up the wall as far as is comfortable, then back down."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sırtın duvara dönük, kolların bükülü ve ellerin omuz hizasında dur. Kollarını rahat edebildiğin kadar duvar boyunca yukarı kaydır, sonra indir."
+          }
+        }
+      }
+    },
+    "exercise.pushUp.counter": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Counter Push-Up"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tezgâhta Şınav"
+          }
+        }
+      }
+    },
+    "exercise.pushUp.counter.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place your hands on a sturdy kitchen counter and step your feet back. Keep your body straight as you lower your chest and push back up."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ellerini sağlam bir mutfak tezgâhına koy ve ayaklarını geriye al. Göğsünü indirip geri iterken vücudunu düz tut."
+          }
+        }
+      }
+    },
+    "exercise.pushUp.counterSlow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow Counter Push-Up"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yavaş Tezgâhta Şınav"
+          }
+        }
+      }
+    },
+    "exercise.pushUp.counterSlow.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do a counter push-up, but take three slow seconds to lower and pause briefly before pushing back."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tezgâhta şınav gibi yap, ancak üç saniyede yavaşça in ve geri itmeden önce kısa bir an bekle."
+          }
+        }
+      }
+    },
+    "exercise.pushUp.wall": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wall Push-Up"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duvarda Şınav"
+          }
+        }
+      }
+    },
+    "exercise.pushUp.wall.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand an arm's length from a wall with your hands on it at shoulder height. Bend your elbows to bring your chest toward the wall, then push back."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duvardan bir kol boyu uzakta dur, ellerini omuz hizasında duvara koy. Dirseklerini bükerek göğsünü duvara yaklaştır, sonra geri it."
+          }
+        }
+      }
+    },
+    "exercise.row.band": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Band Row"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bantla Çekiş"
+          }
+        }
+      }
+    },
+    "exercise.row.band.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anchor the band at chest height in a closed door or around a sturdy post. Pull the ends toward your ribs, squeezing your shoulder blades, then release slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bandı göğüs hizasında kapalı bir kapıya ya da sağlam bir direğe sabitle. Uçları kaburgalarına doğru çek, kürek kemiklerini sık, sonra yavaşça bırak."
+          }
+        }
+      }
+    },
+    "exercise.row.dumbbellSupported": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Dumbbell Row"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekli Dambıl Çekişi"
+          }
+        }
+      }
+    },
+    "exercise.row.dumbbellSupported.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rest one hand on a sturdy chair or table and hold a dumbbell in the other. Pull it up toward your hip, then lower slowly. Work both sides."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir elini sağlam bir sandalyeye ya da masaya daya, diğer elinde dambıl tut. Dambılı kalçana doğru çek, sonra yavaşça indir. İki tarafı da çalıştır."
+          }
+        }
+      }
+    },
+    "exercise.row.shoulderSqueeze": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shoulder Blade Squeeze"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kürek Kemiği Sıkıştırma"
+          }
+        }
+      }
+    },
+    "exercise.row.shoulderSqueeze.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit or stand tall with your elbows bent at your sides. Squeeze your shoulder blades together, hold for two seconds and relax."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dirseklerin yanlarda bükülü, dik otur ya da dur. Kürek kemiklerini birbirine yaklaştır, iki saniye tut ve gevşe."
+          }
+        }
+      }
+    },
+    "exercise.sideLegRaise.band": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Band Side Leg Raise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bantla Yana Bacak Kaldırma"
+          }
+        }
+      }
+    },
+    "exercise.sideLegRaise.band.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loop the band around your ankles and hold a chair. Lift one leg out to the side against the band, then lower slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bandı ayak bileklerine geçir ve bir sandalyeye tutun. Bir bacağını bandın direncine karşı yana kaldır, sonra yavaşça indir."
+          }
+        }
+      }
+    },
+    "exercise.sideLegRaise.supported": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Side Leg Raise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekli Yana Bacak Kaldırma"
+          }
+        }
+      }
+    },
+    "exercise.sideLegRaise.supported.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a chair. Keeping your body upright and toes pointing forward, lift one leg out to the side and lower it slowly. Work both sides."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir sandalyeye tutun. Gövden dik, ayak ucun önde olacak şekilde bir bacağını yana kaldır ve yavaşça indir. İki tarafı da çalıştır."
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.armsCrossed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit-to-Stand, Arms Crossed"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kollar Çapraz Oturup Kalkma"
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.armsCrossed.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cross your arms over your chest. Lean forward and stand up without using your hands. Lower yourself back down with control."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kollarını göğsünde çaprazla. Öne eğil ve ellerini kullanmadan ayağa kalk. Kontrollü şekilde geri otur."
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.goblet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Goblet Sit-to-Stand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dambılla Oturup Kalkma"
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.goblet.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold one dumbbell close to your chest with both hands. Stand up from the chair and sit back down slowly. Choose a weight you can lift with good control."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir dambılı iki elinle göğsüne yakın tut. Sandalyeden kalk ve yavaşça geri otur. Kontrollü kaldırabildiğin bir ağırlık seç."
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.slowLower": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow Sit-to-Stand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yavaş Oturup Kalkma"
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.slowLower.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand up as before, then take three slow seconds to sit back down. Keep your knees in line with your toes."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aynı şekilde kalk, sonra üç saniyede yavaşça geri otur. Dizlerin ayak parmaklarınla aynı hizada kalsın."
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.withHands": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit-to-Stand with Hands"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elden Destekli Oturup Kalkma"
+          }
+        }
+      }
+    },
+    "exercise.sitToStand.withHands.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit near the front of a sturdy chair, feet flat. Lean forward, push through your heels and use your hands on the chair or your thighs to stand. Sit back down slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sağlam bir sandalyenin önüne doğru otur, ayakların yere tam bassın. Öne eğil, topuklarından it ve ellerini sandalyeye ya da uyluklarına koyarak ayağa kalk. Yavaşça geri otur."
+          }
+        }
+      }
+    },
+    "exercise.stepTap.supported": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Step Tap"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekli Adım Dokunuşu"
+          }
+        }
+      }
+    },
+    "exercise.stepTap.supported.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a chair. Tap one foot forward, to the side and back, returning to the centre each time. Switch feet."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir sandalyeye tutun. Bir ayağınla öne, yana ve geriye dokun, her seferinde ortaya dön. Ayak değiştir."
+          }
+        }
+      }
+    },
+    "exercise.stretch.calfWall": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calf Stretch"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baldır Esnetme"
+          }
+        }
+      }
+    },
+    "exercise.stretch.calfWall.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With your hands on a wall, step one foot back and press the heel down until you feel a gentle stretch in the calf. Switch sides halfway."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ellerin duvarda, bir ayağını geri al ve baldırında hafif bir gerilme hissedene kadar topuğunu yere bastır. Yarısında taraf değiştir."
+          }
+        }
+      }
+    },
+    "exercise.stretch.chestOpener": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chest Opener"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göğüs Açma"
+          }
+        }
+      }
+    },
+    "exercise.stretch.chestOpener.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clasp your hands behind your back or rest them on your lower back. Gently draw your shoulders back and breathe slowly."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ellerini arkanda birleştir ya da belinin üstüne koy. Omuzlarını nazikçe geriye al ve yavaş nefes al."
+          }
+        }
+      }
+    },
+    "exercise.stretch.hamstringSeated": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seated Hamstring Stretch"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oturarak Arka Bacak Esnetme"
+          }
+        }
+      }
+    },
+    "exercise.stretch.hamstringSeated.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sit near the edge of a chair with one leg straight and the heel on the floor. Sit tall and lean forward slightly until you feel a gentle stretch. Switch sides halfway."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sandalyenin ucuna otur, bir bacağın düz ve topuğun yerde olsun. Dik otur ve hafif bir gerilme hissedene kadar biraz öne eğil. Yarısında taraf değiştir."
+          }
+        }
+      }
+    },
+    "exercise.tandem.full": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tandem Stand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tandem Duruş"
+          }
+        }
+      }
+    },
+    "exercise.tandem.full.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Holding a counter, place one foot directly in front of the other, heel touching toe. Stand steady, then switch feet. Keep a hand on the counter."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir tezgâha tutunarak bir ayağını diğerinin tam önüne koy, topuk parmak ucuna değsin. Dengede dur, sonra ayak değiştir. Bir elin tezgâhta kalsın."
+          }
+        }
+      }
+    },
+    "exercise.tandem.semi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semi-Tandem Stand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yarı Tandem Duruş"
+          }
+        }
+      }
+    },
+    "exercise.tandem.semi.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Holding a counter, place one foot half a step ahead so its heel is beside the big toe of the other foot. Stand steady and hold on whenever you need to."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir tezgâha tutunarak bir ayağını yarım adım öne al; topuğu diğer ayağının başparmağının yanında olsun. Dengede dur, gerektiğinde tutun."
+          }
+        }
+      }
+    },
+    "exercise.weightShift.supported": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supported Weight Shift"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Destekli Ağırlık Aktarma"
+          }
+        }
+      }
+    },
+    "exercise.weightShift.supported.how": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a counter with your feet hip-width apart. Slowly shift your weight to one foot, then the other, without lifting your feet."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayakların kalça genişliğinde, bir tezgâha tutun. Ayaklarını kaldırmadan ağırlığını yavaşça bir ayağına, sonra diğerine aktar."
+          }
+        }
+      }
+    },
+    "feedback.discomfort.mildFamiliar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mild, familiar soreness"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hafif, bildik bir sızı"
+          }
+        }
+      }
+    },
+    "feedback.discomfort.newOrSharp": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New or sharp pain"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni ya da keskin bir ağrı"
+          }
+        }
+      }
+    },
+    "feedback.discomfort.none": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "None"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hayır"
+          }
+        }
+      }
+    },
+    "feedback.discomfort.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Any discomfort?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rahatsızlık oldu mu?"
+          }
+        }
+      }
+    },
+    "feedback.dizziness": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I felt dizzy or light-headed"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başım döndü ya da sersemlik hissettim"
+          }
+        }
+      }
+    },
+    "feedback.note.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anything you'd like to remember"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hatırlamak istediğin bir şey"
+          }
+        }
+      }
+    },
+    "feedback.note.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notes (optional)"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notlar (isteğe bağlı)"
+          }
+        }
+      }
+    },
+    "feedback.regions.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where did you feel it?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nerede hissettin?"
+          }
+        }
+      }
+    },
+    "feedback.rpe.easy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "easy"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kolay"
+          }
+        }
+      }
+    },
+    "feedback.rpe.hard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hard"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "zor"
+          }
+        }
+      }
+    },
+    "feedback.rpe.max": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "as hard as possible"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "olabildiğince zor"
+          }
+        }
+      }
+    },
+    "feedback.rpe.moderate": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "moderate"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "orta"
+          }
+        }
+      }
+    },
+    "feedback.rpe.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How hard did it feel?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ne kadar zorlandın?"
+          }
+        }
+      }
+    },
+    "feedback.rpe.value %lld %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld of 10 — %2$@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 üzerinden %1$lld — %2$@"
+          }
+        }
+      }
+    },
+    "feedback.rpe.veryEasy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "very easy"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çok kolay"
+          }
+        }
+      }
+    },
+    "feedback.rpe.veryHard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "very hard"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çok zor"
+          }
+        }
+      }
+    },
+    "feedback.save": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydet"
+          }
+        }
+      }
+    },
+    "feedback.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How did it go?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nasıl geçti?"
+          }
+        }
+      }
+    },
+    "onboarding.activity.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How active are you on a typical day?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sıradan bir günde ne kadar aktifsin?"
+          }
+        }
+      }
+    },
+    "onboarding.ageRange.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How old are you?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaç yaşındasın?"
+          }
+        }
+      }
+    },
+    "onboarding.days.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose the days you'd like to train. Two or three days a week is a great start."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenman yapmak istediğin günleri seç. Haftada iki ya da üç gün harika bir başlangıç."
+          }
+        }
+      }
+    },
+    "onboarding.days.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which days suit you?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hangi günler sana uygun?"
+          }
+        }
+      }
+    },
+    "onboarding.equipment.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose everything that applies. Every exercise has a no-equipment version."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygun olanların hepsini seç. Her hareketin ekipmansız bir versiyonu var."
+          }
+        }
+      }
+    },
+    "onboarding.equipment.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What do you have at home?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evde neler var?"
+          }
+        }
+      }
+    },
+    "onboarding.experience.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How familiar are you with strength training?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kuvvet antrenmanına ne kadar aşinasın?"
+          }
+        }
+      }
+    },
+    "onboarding.finish": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish setup"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurulumu bitir"
+          }
+        }
+      }
+    },
+    "onboarding.goal.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What matters most to you?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senin için en önemli olan ne?"
+          }
+        }
+      }
+    },
+    "onboarding.painRegions.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We'll leave out exercises that load these areas."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu bölgelere yük bindiren hareketleri planına koymayacağız."
+          }
+        }
+      }
+    },
+    "onboarding.painRegions.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where do you feel pain?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nerede ağrı hissediyorsun?"
+          }
+        }
+      }
+    },
+    "onboarding.progress": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup progress"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurulum ilerlemesi"
+          }
+        }
+      }
+    },
+    "onboarding.result.cleared.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We'll build your first week now. Every session starts gently, and you can stop at any time."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk haftanı şimdi hazırlıyoruz. Her seans hafif başlar ve istediğin an durabilirsin."
+          }
+        }
+      }
+    },
+    "onboarding.result.cleared.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're all set"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her şey hazır"
+          }
+        }
+      }
+    },
+    "onboarding.result.review.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Based on your answers, we recommend talking to a doctor or physiotherapist before starting a new exercise program. Once they've given you the go-ahead, you can unlock your plan from the Today screen."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yanıtlarına göre yeni bir egzersiz programına başlamadan önce bir doktor ya da fizyoterapistle görüşmeni öneriyoruz. Onay aldığında planını Bugün ekranından açabilirsin."
+          }
+        }
+      }
+    },
+    "onboarding.result.review.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's check in with a professional first"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önce bir uzmana danışalım"
+          }
+        }
+      }
+    },
+    "onboarding.saveFailed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your answers couldn't be saved. Please try again."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yanıtların kaydedilemedi. Lütfen tekrar dene."
+          }
+        }
+      }
+    },
+    "onboarding.screening.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "These help us keep your plan safe. They are not a medical assessment."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu sorular planını güvenli tutmamıza yardımcı olur. Tıbbi bir değerlendirme değildir."
+          }
+        }
+      }
+    },
+    "onboarding.screening.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A few safety questions"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birkaç güvenlik sorusu"
+          }
+        }
+      }
+    },
+    "onboarding.sessionLength.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How long should a session be?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir seans ne kadar sürsün?"
+          }
+        }
+      }
+    },
+    "onboarding.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get started"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başla"
+          }
+        }
+      }
+    },
+    "onboarding.welcome.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In a few short steps we'll set up a plan that fits your body, your time and your equipment."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birkaç kısa adımda vücuduna, zamanına ve ekipmanına uygun bir plan hazırlayacağız."
+          }
+        }
+      }
+    },
+    "onboarding.welcome.privacy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your answers stay on this iPhone."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yanıtların bu iPhone'da kalır."
+          }
+        }
+      }
+    },
+    "onboarding.welcome.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to Strengthspan"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strengthspan'e hoş geldin"
+          }
+        }
+      }
+    },
+    "option.activity.lightlyActive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some light activity, like walking"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yürüyüş gibi biraz hafif aktivite"
+          }
+        }
+      }
+    },
+    "option.activity.moderatelyActive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regular moderate activity"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Düzenli orta düzey aktivite"
+          }
+        }
+      }
+    },
+    "option.activity.mostlySedentary": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostly sitting during the day"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günün çoğunu oturarak geçiriyorum"
+          }
+        }
+      }
+    },
+    "option.activity.veryActive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Very active most days"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çoğu gün çok aktifim"
+          }
+        }
+      }
+    },
+    "option.ageRange.age45to49": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "45–49"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "45–49"
+          }
+        }
+      }
+    },
+    "option.ageRange.age50to54": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50–54"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50–54"
+          }
+        }
+      }
+    },
+    "option.ageRange.age55to59": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "55–59"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "55–59"
+          }
+        }
+      }
+    },
+    "option.ageRange.age60to64": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "60–64"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "60–64"
+          }
+        }
+      }
+    },
+    "option.ageRange.age65to69": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "65–69"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "65–69"
+          }
+        }
+      }
+    },
+    "option.ageRange.age70plus": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "70 or older"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "70 ve üzeri"
+          }
+        }
+      }
+    },
+    "option.ageRange.under45": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Under 45"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "45 yaş altı"
+          }
+        }
+      }
+    },
+    "option.block.balanceControl": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balance & control"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denge ve kontrol"
+          }
+        }
+      }
+    },
+    "option.block.cooldown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cool-down"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soğuma"
+          }
+        }
+      }
+    },
+    "option.block.mainStrength": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strength"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kuvvet"
+          }
+        }
+      }
+    },
+    "option.block.warmUp": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warm-up"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isınma"
+          }
+        }
+      }
+    },
+    "option.equipment.bodyweightOnly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No equipment"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekipman yok"
+          }
+        }
+      }
+    },
+    "option.equipment.dumbbells": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dumbbells"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dambıl"
+          }
+        }
+      }
+    },
+    "option.equipment.resistanceBand": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resistance band"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Direnç bandı"
+          }
+        }
+      }
+    },
+    "option.experience.new": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New to strength training"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kuvvet antrenmanında yeniyim"
+          }
+        }
+      }
+    },
+    "option.experience.regular": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I train regularly"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Düzenli antrenman yapıyorum"
+          }
+        }
+      }
+    },
+    "option.experience.returning": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getting back into it after a break"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aradan sonra yeniden başlıyorum"
+          }
+        }
+      }
+    },
+    "option.goal.buildStrength": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get stronger"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha güçlü olmak"
+          }
+        }
+      }
+    },
+    "option.goal.generalFitness": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General fitness"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genel zindelik"
+          }
+        }
+      }
+    },
+    "option.goal.improveBalance": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Improve my balance"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dengemi geliştirmek"
+          }
+        }
+      }
+    },
+    "option.goal.moveMoreEasily": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move more easily"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha rahat hareket etmek"
+          }
+        }
+      }
+    },
+    "option.goal.stayIndependent": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stay independent as I age"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yaşlandıkça bağımsız kalmak"
+          }
+        }
+      }
+    },
+    "option.region.ankleFoot": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ankle or foot"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayak bileği veya ayak"
+          }
+        }
+      }
+    },
+    "option.region.back": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sırt veya bel"
+          }
+        }
+      }
+    },
+    "option.region.hip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hip"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalça"
+          }
+        }
+      }
+    },
+    "option.region.knee": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Knee"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diz"
+          }
+        }
+      }
+    },
+    "option.region.neck": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neck"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boyun"
+          }
+        }
+      }
+    },
+    "option.region.other": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Somewhere else"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başka bir yer"
+          }
+        }
+      }
+    },
+    "option.region.shoulder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shoulder"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omuz"
+          }
+        }
+      }
+    },
+    "option.region.wristHand": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrist or hand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El bileği veya el"
+          }
+        }
+      }
+    },
+    "option.sessionLength.long": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 minutes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 dakika"
+          }
+        }
+      }
+    },
+    "option.sessionLength.short": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 minutes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 dakika"
+          }
+        }
+      }
+    },
+    "option.sessionLength.standard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "20 minutes"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "20 dakika"
+          }
+        }
+      }
+    },
+    "outcome.finished.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thanks for checking in. Your next session will adapt to how today went."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri bildirimin için teşekkürler. Sonraki seansın bugüne göre uyarlanacak."
+          }
+        }
+      }
+    },
+    "outcome.finished.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Session complete"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seans tamamlandı"
+          }
+        }
+      }
+    },
+    "outcome.stopped.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stopping was the right call. Rest and look after yourself."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durmak doğru bir karardı. Dinlen ve kendine iyi bak."
+          }
+        }
+      }
+    },
+    "outcome.stopped.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Session stopped"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seans durduruldu"
+          }
+        }
+      }
+    },
+    "player.announce.finished": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Well done. That was the last exercise."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tebrikler. Bu son hareketti."
+          }
+        }
+      }
+    },
+    "player.announce.set %@ %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@. Set %2$lld of %3$lld."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@. Set %2$lld / %3$lld."
+          }
+        }
+      }
+    },
+    "player.checkIn.notOk": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yes, something isn't right"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evet, bir şeyler yolunda değil"
+          }
+        }
+      }
+    },
+    "player.checkIn.ok": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No, I feel fine — let's start"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hayır, iyiyim — başlayalım"
+          }
+        }
+      }
+    },
+    "player.checkIn.plan": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's plan"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bugünün planı"
+          }
+        }
+      }
+    },
+    "player.checkIn.question": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you have any new pain, dizziness or chest discomfort today, or do you feel unwell?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bugün yeni bir ağrın, baş dönmen ya da göğüs rahatsızlığın var mı, ya da kendini iyi hissetmiyor musun?"
+          }
+        }
+      }
+    },
+    "player.checkIn.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Before we start"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlamadan önce"
+          }
+        }
+      }
+    },
+    "player.easier": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make it easier"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha kolay versiyon"
+          }
+        }
+      }
+    },
+    "player.end": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "End"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bitir"
+          }
+        }
+      }
+    },
+    "player.load %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weight: %@ kg"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ağırlık: %@ kg"
+          }
+        }
+      }
+    },
+    "player.next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Up next"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sıradaki"
+          }
+        }
+      }
+    },
+    "player.pause": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duraklat"
+          }
+        }
+      }
+    },
+    "player.paused": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duraklatıldı"
+          }
+        }
+      }
+    },
+    "player.progress": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workout progress"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenman ilerlemesi"
+          }
+        }
+      }
+    },
+    "player.reps %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld reps"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld tekrar"
+          }
+        }
+      }
+    },
+    "player.rest": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rest"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dinlen"
+          }
+        }
+      }
+    },
+    "player.resume": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devam et"
+          }
+        }
+      }
+    },
+    "player.seconds %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sec"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sn"
+          }
+        }
+      }
+    },
+    "player.secondsLeft %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld seconds left"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld saniye kaldı"
+          }
+        }
+      }
+    },
+    "player.setDone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set done"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set tamam"
+          }
+        }
+      }
+    },
+    "player.setOf %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set %1$lld of %2$lld"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set %1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "player.skipExercise": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip exercise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hareketi atla"
+          }
+        }
+      }
+    },
+    "player.skipRest": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip rest"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dinlenmeyi atla"
+          }
+        }
+      }
+    },
+    "player.timer.pause": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause timer"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Süreyi durdur"
+          }
+        }
+      }
+    },
+    "player.timer.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start timer"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Süreyi başlat"
+          }
+        }
+      }
+    },
+    "player.unwell": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I don't feel well"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kendimi iyi hissetmiyorum"
+          }
+        }
+      }
+    },
+    "player.useSupport": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a sturdy chair, counter or wall."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sağlam bir sandalyeye, tezgâha ya da duvara tutun."
+          }
+        }
+      }
+    },
     "progress.capacityMap": {
       "extractionState": "manual",
       "localizations": {
@@ -150,6 +3261,278 @@
           "stringUnit": {
             "state": "translated",
             "value": "İlerleme"
+          }
+        }
+      }
+    },
+    "safety.check.confirmPain": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop and adjust my plan"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dur ve planımı uyarla"
+          }
+        }
+      }
+    },
+    "safety.check.pain": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pain in part of my body"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vücudumun bir yerinde ağrı"
+          }
+        }
+      }
+    },
+    "safety.check.regions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where do you feel pain?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nerede ağrı hissediyorsun?"
+          }
+        }
+      }
+    },
+    "safety.check.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What's happening?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ne oluyor?"
+          }
+        }
+      }
+    },
+    "safety.check.unwell": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I'm tired or not feeling up to it"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yorgunum ya da bugün hiç havamda değilim"
+          }
+        }
+      }
+    },
+    "safety.check.warningSigns": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chest pain, dizziness, feeling faint or very short of breath"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göğüs ağrısı, baş dönmesi, bayılacak gibi olma ya da ciddi nefes darlığı"
+          }
+        }
+      }
+    },
+    "safety.emergency": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop exercising and sit down. If symptoms are severe or don't pass within a few minutes, call your local emergency number (112 in Türkiye and Europe)."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Egzersizi bırak ve otur. Belirtiler şiddetliyse ya da birkaç dakika içinde geçmezse yerel acil numarasını ara (Türkiye'de 112)."
+          }
+        }
+      }
+    },
+    "safety.painAdjusted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We've removed exercises that load this area from your plan. If the pain continues, please see a health professional."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu bölgeye yük bindiren hareketleri planından çıkardık. Ağrı devam ederse lütfen bir sağlık profesyoneline görün."
+          }
+        }
+      }
+    },
+    "safety.professional": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please talk to a health professional before your next session. Training is paused until you confirm you feel well."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir sonraki seanstan önce lütfen bir sağlık profesyoneliyle görüş. Kendini iyi hissettiğini onaylayana kadar antrenman duraklatıldı."
+          }
+        }
+      }
+    },
+    "screening.chestPain": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you feel pain, pressure or tightness in your chest during physical activity?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiziksel aktivite sırasında göğsünde ağrı, baskı ya da sıkışma hissediyor musun?"
+          }
+        }
+      }
+    },
+    "screening.dizziness": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In the past 12 months, have you lost your balance because of dizziness, or fainted?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son 12 ayda baş dönmesi nedeniyle dengeni kaybettin mi ya da bayıldın mı?"
+          }
+        }
+      }
+    },
+    "screening.jointPain": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you have joint or back pain that gets worse with movement?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hareketle kötüleşen eklem ya da sırt ağrın var mı?"
+          }
+        }
+      }
+    },
+    "screening.movementLimitation": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do you have any other condition that limits how you move?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hareketini kısıtlayan başka bir durumun var mı?"
+          }
+        }
+      }
+    },
+    "screening.recentFall": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have you had a fall in the past 12 months?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son 12 ayda düştün mü?"
+          }
+        }
+      }
+    },
+    "screening.recentSurgery": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have you had surgery or a significant injury in the past 3 months?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son 3 ay içinde ameliyat oldun mu ya da ciddi bir yaralanma geçirdin mi?"
+          }
+        }
+      }
+    },
+    "screening.supervisedOnly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has a health professional told you to exercise only under medical supervision?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir sağlık profesyoneli sana yalnızca tıbbi gözetim altında egzersiz yapmanı söyledi mi?"
           }
         }
       }
@@ -273,6 +3656,23 @@
         }
       }
     },
+    "settings.haptics": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptic feedback"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titreşimli geri bildirim"
+          }
+        }
+      }
+    },
     "settings.language": {
       "extractionState": "manual",
       "localizations": {
@@ -392,6 +3792,23 @@
         }
       }
     },
+    "settings.section.workout": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workout"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenman"
+          }
+        }
+      }
+    },
     "settings.support": {
       "extractionState": "manual",
       "localizations": {
@@ -456,6 +3873,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sürüm"
+          }
+        }
+      }
+    },
+    "settings.voiceGuidance": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voice guidance"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesli yönlendirme"
           }
         }
       }
@@ -630,6 +4064,108 @@
         }
       }
     },
+    "today.blocked.dizziness.action": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I feel well again"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kendimi yeniden iyi hissediyorum"
+          }
+        }
+      }
+    },
+    "today.blocked.dizziness.confirm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only continue if your symptoms have fully passed."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yalnızca belirtilerin tamamen geçtiyse devam et."
+          }
+        }
+      }
+    },
+    "today.blocked.dizziness.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training is paused because you reported dizziness or other warning signs. If it happens again, please talk to a health professional."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baş dönmesi ya da başka uyarı işaretleri bildirdiğin için antrenman duraklatıldı. Tekrarlarsa lütfen bir sağlık profesyoneliyle görüş."
+          }
+        }
+      }
+    },
+    "today.blocked.review.action": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I've been cleared to exercise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Egzersiz için onay aldım"
+          }
+        }
+      }
+    },
+    "today.blocked.review.confirm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please confirm that a health professional has said it's safe for you to start exercising."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lütfen bir sağlık profesyonelinin egzersize başlamanın senin için güvenli olduğunu söylediğini onayla."
+          }
+        }
+      }
+    },
+    "today.blocked.review.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We recommend talking to a health professional before you start. When you've been cleared to exercise, unlock your plan here."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlamadan önce bir sağlık profesyoneliyle görüşmeni öneriyoruz. Egzersiz için onay aldığında planını buradan açabilirsin."
+          }
+        }
+      }
+    },
     "today.progress.empty.message": {
       "extractionState": "manual",
       "localizations": {
@@ -681,6 +4217,23 @@
         }
       }
     },
+    "today.progress.week %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This week: %1$lld of %2$lld sessions done"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu hafta: %2$lld seanstan %1$lld tanesi tamam"
+          }
+        }
+      }
+    },
     "today.title": {
       "extractionState": "manual",
       "localizations": {
@@ -698,19 +4251,87 @@
         }
       }
     },
+    "today.workout.continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue workout"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenmana devam et"
+          }
+        }
+      }
+    },
+    "today.workout.done": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's session is done. Nice work."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bugünkü seans tamam. Harika iş."
+          }
+        }
+      }
+    },
     "today.workout.empty.message": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your personal plan is created after your first capacity check."
+            "value": "No session is planned yet."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kişisel planın, ilk kapasite değerlendirmenden sonra oluşturulur."
+            "value": "Henüz planlanmış bir seans yok."
+          }
+        }
+      }
+    },
+    "today.workout.exerciseCount %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld exercises"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld hareket"
+          }
+        }
+      }
+    },
+    "today.workout.next %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next session: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonraki seans: %@"
           }
         }
       }
@@ -728,6 +4349,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bugün için %lld dakikalık bir seans planlandı."
+          }
+        }
+      }
+    },
+    "today.workout.returnWeek": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome back — this week starts a little lighter."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekrar hoş geldin — bu hafta biraz daha hafif başlıyor."
+          }
+        }
+      }
+    },
+    "today.workout.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start workout"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenmana başla"
           }
         }
       }

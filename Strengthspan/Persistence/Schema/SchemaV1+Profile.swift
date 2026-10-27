@@ -14,6 +14,8 @@ extension SchemaV1 {
         var primaryGoalRaw: String
         var screeningOutcomeRaw: String
         var safetyScreeningCompletedAt: Date?
+        /// When the user confirmed a health professional cleared them to exercise (docs/05 §2).
+        var professionalClearanceConfirmedAt: Date?
         var onboardingCompletedAt: Date?
 
         @Relationship(deleteRule: .cascade, inverse: \UserPreferences.profile)

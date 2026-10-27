@@ -1,5 +1,6 @@
 import Foundation
 import Testing
+@testable import Strengthspan
 
 /// Reads the compiled string tables from the host app bundle.
 @Suite("Localization")
@@ -17,6 +18,24 @@ struct LocalizationTests {
         let turkish = try table(for: "tr")
         #expect(!english.isEmpty)
         #expect(Set(english.keys) == Set(turkish.keys))
+    }
+
+    /// Keys built at runtime (catalog, options, screening) can't be found by Xcode's extraction.
+    @Test func dynamicKeysExistInBothLanguages() throws {
+        var keys = ExerciseCatalog.all.flatMap(\.variants).flatMap { [$0.nameKey, $0.instructionKey] }
+        keys += ScreeningQuestion.allCases.map(\.textKey)
+        keys += AgeRange.allCases.map(\.localizationKey) + ActivityLevel.allCases.map(\.localizationKey)
+        keys += ExperienceLevel.allCases.map(\.localizationKey) + PrimaryGoal.allCases.map(\.localizationKey)
+        keys += Equipment.allCases.map(\.localizationKey) + BodyRegion.allCases.map(\.localizationKey)
+        keys += WorkoutBlock.allCases.map(\.localizationKey)
+        keys += Discomfort.allCases.map { "feedback.discomfort.\($0.rawValue)" }
+
+        for localization in ["en", "tr"] {
+            let table = try table(for: localization)
+            for key in keys {
+                #expect(table[key] != nil, "\(localization): missing \(key)")
+            }
+        }
     }
 
     @Test func noTranslationIsEmptyOrARawKey() throws {

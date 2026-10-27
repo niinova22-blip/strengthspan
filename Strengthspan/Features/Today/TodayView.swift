@@ -1,24 +1,28 @@
+import OSLog
 import SwiftData
 import SwiftUI
 
 /// Home screen. Answers three questions at a glance: what to do today, how far the user has
-/// come, and when the next capacity check is. Each card shows an honest empty state until
-/// the corresponding feature has produced real data.
+/// come, and when the next capacity check is.
 struct TodayView: View {
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.appClock) private var clock
     @Environment(\.calendar) private var calendar
+    @Environment(\.scenePhase) private var scenePhase
     @Environment(\.reassessmentPolicy) private var reassessmentPolicy
 
-    @Query(sort: \WorkoutSession.scheduledDate)
-    private var sessions: [WorkoutSession]
-
+    @Query private var profiles: [UserProfile]
+    @Query(sort: \WorkoutSession.scheduledDate) private var sessions: [WorkoutSession]
     // Filtered in memory: a #Predicate on the optional `completedAt` key path triggers
     // Sendable warnings under strict concurrency, and a user has only a few sessions.
-    @Query(sort: \AssessmentSession.startedAt, order: .reverse)
-    private var assessments: [AssessmentSession]
+    @Query(sort: \AssessmentSession.startedAt, order: .reverse) private var assessments: [AssessmentSession]
+    @Query(sort: \CapacityMetric.computedAt, order: .reverse) private var metrics: [CapacityMetric]
 
-    @Query(sort: \CapacityMetric.computedAt, order: .reverse)
-    private var metrics: [CapacityMetric]
+    @State private var blockReason: PlanBlockReason?
+    @State private var refreshID = 0
+    @State private var activeSession: WorkoutSession?
+    @State private var confirmingClearance = false
+    @State private var confirmingRecovery = false
 
     var body: some View {
         NavigationStack {
@@ -34,30 +38,114 @@ struct TodayView: View {
             .background(SSColor.background.ignoresSafeArea())
             .navigationTitle("today.title")
         }
+        .task(id: refreshID) { refreshPlan() }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active { refreshID += 1 }
+        }
+        .fullScreenCover(item: $activeSession, onDismiss: { refreshID += 1 }) { session in
+            WorkoutPlayerView(
+                model: WorkoutPlayerModel(
+                    session: session,
+                    store: store,
+                    clock: clock,
+                    voiceEnabled: preferences?.voiceGuidanceEnabled ?? true
+                ),
+                hapticsEnabled: preferences?.hapticsEnabled ?? true
+            )
+        }
+        .confirmationDialog("today.blocked.review.confirm", isPresented: $confirmingClearance, titleVisibility: .visible) {
+            Button("today.blocked.review.action") { update { try $0.confirmProfessionalClearance(now: clock.now) } }
+        }
+        .confirmationDialog("today.blocked.dizziness.confirm", isPresented: $confirmingRecovery, titleVisibility: .visible) {
+            Button("today.blocked.dizziness.action") { update { try $0.resolveDizziness(now: clock.now) } }
+        }
     }
 
     // MARK: Cards
 
     private var workoutCard: some View {
         SSCard("today.workout.title", systemImage: "figure.strengthtraining.functional") {
-            if let session = todaysPlannedSession {
-                Text("today.workout.planned \(session.plannedDurationMinutes)")
-                    .font(SSFont.body)
-                    .foregroundStyle(SSColor.textPrimary)
-            } else {
+            switch blockReason {
+            case .professionalReviewRecommended:
+                blockedContent("today.blocked.review.message", action: "today.blocked.review.action") { confirmingClearance = true }
+            case .dizzinessReported:
+                blockedContent("today.blocked.dizziness.message", action: "today.blocked.dizziness.action") { confirmingRecovery = true }
+            case .notScreened:
                 SSEmptyState("today.workout.empty.message", systemImage: "calendar.badge.clock")
+            case nil:
+                sessionContent
             }
+        }
+    }
+
+    @ViewBuilder
+    private var sessionContent: some View {
+        if let session = todaysSession {
+            VStack(alignment: .leading, spacing: SSSpacing.m) {
+                if isReturnWeek {
+                    Label("today.workout.returnWeek", systemImage: "arrow.uturn.backward.circle")
+                        .font(SSFont.callout)
+                        .foregroundStyle(SSColor.accent)
+                }
+                Text("today.workout.planned \(session.plannedDurationMinutes)")
+                    .font(SSFont.headline)
+                    .foregroundStyle(SSColor.textPrimary)
+                Text("today.workout.exerciseCount \(Set(session.sets.map(\.orderIndex)).count)")
+                    .font(SSFont.callout)
+                    .foregroundStyle(SSColor.textSecondary)
+                Button(session.status == .inProgress ? LocalizedStringKey("today.workout.continue") : "today.workout.start") {
+                    activeSession = session
+                }
+                .buttonStyle(.ssPrimary)
+                .accessibilityIdentifier("today.workout.start")
+            }
+        } else if finishedToday {
+            Label("today.workout.done", systemImage: "checkmark.circle.fill")
+                .font(SSFont.body)
+                .foregroundStyle(SSColor.textPrimary)
+            nextSessionText
+        } else if nextSession != nil {
+            nextSessionText
+        } else {
+            SSEmptyState("today.workout.empty.message", systemImage: "calendar.badge.clock")
+        }
+    }
+
+    @ViewBuilder
+    private var nextSessionText: some View {
+        if let next = nextSession {
+            Text("today.workout.next \(next.scheduledDate.formatted(.dateTime.weekday(.wide).day().month(.wide)))")
+                .font(SSFont.body)
+                .foregroundStyle(SSColor.textSecondary)
+        }
+    }
+
+    private func blockedContent(_ message: LocalizedStringKey, action: LocalizedStringKey, perform: @escaping () -> Void) -> some View {
+        VStack(alignment: .leading, spacing: SSSpacing.m) {
+            Text(message)
+                .font(SSFont.body)
+                .foregroundStyle(SSColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+            Button(action, action: perform)
+                .buttonStyle(.ssSecondary)
         }
     }
 
     private var progressCard: some View {
         SSCard("today.progress.title", systemImage: "chart.line.uptrend.xyaxis") {
-            if measuredDimensionCount > 0 {
-                Text("today.progress.measured \(measuredDimensionCount)")
-                    .font(SSFont.body)
-                    .foregroundStyle(SSColor.textPrimary)
-            } else {
-                SSEmptyState("today.progress.empty.message")
+            VStack(alignment: .leading, spacing: SSSpacing.s) {
+                if !currentPlanSessions.isEmpty {
+                    Text("today.progress.week \(currentPlanSessions.filter { $0.status == .completed }.count) \(currentPlanSessions.count)")
+                        .font(SSFont.body)
+                        .foregroundStyle(SSColor.textPrimary)
+                }
+                if measuredDimensionCount > 0 {
+                    Text("today.progress.measured \(measuredDimensionCount)")
+                        .font(SSFont.body)
+                        .foregroundStyle(SSColor.textPrimary)
+                } else {
+                    SSEmptyState("today.progress.empty.message")
+                }
             }
         }
     }
@@ -87,8 +175,35 @@ struct TodayView: View {
 
     // MARK: Derived state
 
-    private var todaysPlannedSession: WorkoutSession? {
-        sessions.first { $0.status == .planned && calendar.isDate($0.scheduledDate, inSameDayAs: clock.now) }
+    private var store: TrainingStore {
+        TrainingStore(context: modelContext, calendar: calendar)
+    }
+
+    private var preferences: UserPreferences? {
+        profiles.first?.preferences
+    }
+
+    private var currentPlanSessions: [WorkoutSession] {
+        sessions.filter { $0.plan?.status == .active }
+    }
+
+    private var isReturnWeek: Bool {
+        currentPlanSessions.first?.plan?.isReturnWeek ?? false
+    }
+
+    private var todaysSession: WorkoutSession? {
+        currentPlanSessions.first {
+            ($0.status == .planned || $0.status == .inProgress) && calendar.isDate($0.scheduledDate, inSameDayAs: clock.now)
+        }
+    }
+
+    private var finishedToday: Bool {
+        sessions.contains { $0.status == .completed && calendar.isDate($0.completedAt ?? .distantPast, inSameDayAs: clock.now) }
+    }
+
+    private var nextSession: WorkoutSession? {
+        let tomorrow = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: clock.now)) ?? clock.now
+        return currentPlanSessions.first { $0.status == .planned && $0.scheduledDate >= tomorrow }
     }
 
     private var measuredDimensionCount: Int {
@@ -102,15 +217,37 @@ struct TodayView: View {
             calendar: calendar
         )
     }
+
+    // MARK: Actions
+
+    private func refreshPlan() {
+        do {
+            switch try store.ensureCurrentPlan(now: clock.now) {
+            case .blocked(let reason): blockReason = reason
+            case .ready: blockReason = nil
+            }
+        } catch {
+            Logger.persistence.error("Preparing the plan failed: \(String(describing: error))")
+        }
+    }
+
+    private func update(_ change: (TrainingStore) throws -> Void) {
+        do {
+            try change(store)
+        } catch {
+            Logger.persistence.error("Updating safety status failed: \(String(describing: error))")
+        }
+        refreshID += 1
+    }
 }
 
 #if DEBUG
-#Preview("Empty") {
+#Preview("With data") {
     TodayView()
-        .modelContainer(PreviewSupport.container(populated: false))
+        .modelContainer(PreviewSupport.container(populated: true))
 }
 
-#Preview("With data, Turkish") {
+#Preview("Turkish") {
     TodayView()
         .modelContainer(PreviewSupport.container(populated: true))
         .environment(\.locale, Locale(identifier: "tr"))

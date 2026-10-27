@@ -6,6 +6,7 @@ import UIKit
 struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
+    @Query private var profiles: [UserProfile]
 
     @State private var isConfirmingDeletion = false
     @State private var showsDeletionSuccess = false
@@ -26,6 +27,18 @@ struct SettingsView: View {
                     Text("settings.section.general")
                 } footer: {
                     Text("settings.language.footer")
+                }
+
+                if let preferences = profiles.first?.preferences {
+                    Section {
+                        Toggle("settings.voiceGuidance", isOn: binding(preferences, \.voiceGuidanceEnabled))
+                            .frame(minHeight: SSLayout.minTouchTarget)
+                        Toggle("settings.haptics", isOn: binding(preferences, \.hapticsEnabled))
+                            .frame(minHeight: SSLayout.minTouchTarget)
+                    } header: {
+                        Text("settings.section.workout")
+                    }
+                    .tint(SSColor.accent)
                 }
 
                 Section {
@@ -88,6 +101,17 @@ struct SettingsView: View {
         let version = info?["CFBundleShortVersionString"] as? String ?? "–"
         let build = info?["CFBundleVersion"] as? String ?? "–"
         return "\(version) (\(build))"
+    }
+
+    private func binding(_ preferences: UserPreferences, _ keyPath: ReferenceWritableKeyPath<UserPreferences, Bool>) -> Binding<Bool> {
+        Binding(
+            get: { preferences[keyPath: keyPath] },
+            set: { newValue in
+                preferences[keyPath: keyPath] = newValue
+                preferences.updatedAt = .now
+                try? modelContext.save()
+            }
+        )
     }
 
     private func openSystemSettings() {

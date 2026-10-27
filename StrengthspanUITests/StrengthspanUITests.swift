@@ -5,34 +5,83 @@ final class StrengthspanUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    @MainActor
-    func testLaunchShowsThreeTabsAndTheyAreNavigable() throws {
+    private func launch(language: String, locale: String) -> XCUIApplication {
         let app = XCUIApplication()
-        app.launchArguments = ["-ui-testing", "-AppleLanguages", "(en)", "-AppleLocale", "en_US"]
+        app.launchArguments = ["-ui-testing", "-AppleLanguages", "(\(language))", "-AppleLocale", locale]
         app.launch()
+        return app
+    }
+
+    private func tap(_ identifier: String, in app: XCUIApplication) {
+        let element = app.descendants(matching: .any)[identifier].firstMatch
+        XCTAssertTrue(element.waitForExistence(timeout: 5), "Missing \(identifier)")
+        if !element.isHittable {
+            app.swipeUp()
+        }
+        element.tap()
+    }
+
+    /// Answers every onboarding step and lands on the Today tab.
+    private func completeOnboarding(_ app: XCUIApplication) {
+        tap("onboarding.next", in: app)
+        for option in ["option.ageRange.age50to54", "option.activity.lightlyActive", "option.experience.new", "option.goal.stayIndependent"] {
+            tap(option, in: app)
+            tap("onboarding.next", in: app)
+        }
+        for weekday in 1...7 {
+            tap("option.weekday.\(weekday)", in: app)
+        }
+        tap("onboarding.next", in: app)
+        tap("option.sessionLength.10", in: app)
+        tap("onboarding.next", in: app)
+        tap("option.equipment.bodyweightOnly", in: app)
+        tap("onboarding.next", in: app)
+        for question in ["supervisedOnly", "chestPain", "dizziness", "recentSurgery", "recentFall", "jointPain", "movementLimitation"] {
+            tap("screening.\(question).no", in: app)
+        }
+        tap("onboarding.next", in: app)
+        tap("onboarding.next", in: app)
+    }
+
+    @MainActor
+    func testOnboardingLeadsToTodayWithAWorkout() throws {
+        let app = launch(language: "en", locale: "en_US")
+        completeOnboarding(app)
 
         let tabBar = app.tabBars.firstMatch
         XCTAssertTrue(tabBar.waitForExistence(timeout: 5))
         XCTAssertEqual(tabBar.buttons.count, 3)
+        // Every weekday was chosen, so there is a session today.
+        XCTAssertTrue(app.buttons["today.workout.start"].waitForExistence(timeout: 5))
 
         tabBar.buttons["Progress"].tap()
         XCTAssertTrue(app.navigationBars["Progress"].waitForExistence(timeout: 2))
-
         tabBar.buttons["Settings"].tap()
         XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 2))
+    }
 
-        tabBar.buttons["Today"].tap()
-        XCTAssertTrue(app.navigationBars["Today"].waitForExistence(timeout: 2))
+    @MainActor
+    func testWorkoutCanBeStoppedSafely() throws {
+        let app = launch(language: "en", locale: "en_US")
+        completeOnboarding(app)
+
+        tap("today.workout.start", in: app)
+        tap("player.checkIn.ok", in: app)
+        tap("player.setDone", in: app)
+        tap("player.unwell", in: app)
+        tap("safety.check.warningSigns", in: app)
+        XCTAssertTrue(app.buttons["outcome.done"].waitForExistence(timeout: 5))
+        tap("outcome.done", in: app)
+
+        // Training is paused after warning signs.
+        XCTAssertFalse(app.buttons["today.workout.start"].waitForExistence(timeout: 2))
     }
 
     @MainActor
     func testLaunchesInTurkish() throws {
-        let app = XCUIApplication()
-        app.launchArguments = ["-ui-testing", "-AppleLanguages", "(tr)", "-AppleLocale", "tr_TR"]
-        app.launch()
-
-        XCTAssertTrue(app.tabBars.buttons["Bugün"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.tabBars.buttons["İlerleme"].exists)
-        XCTAssertTrue(app.tabBars.buttons["Ayarlar"].exists)
+        let app = launch(language: "tr", locale: "tr_TR")
+        let start = app.buttons["onboarding.next"]
+        XCTAssertTrue(start.waitForExistence(timeout: 5))
+        XCTAssertEqual(start.label, "Başla")
     }
 }

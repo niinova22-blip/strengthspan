@@ -10,6 +10,8 @@ extension SchemaV1 {
         var weekStartDate: Date
         var generatorVersion: String
         var statusRaw: String
+        /// A lighter week after a break (SAF-07).
+        var isReturnWeek: Bool = false
 
         @Relationship(deleteRule: .cascade, inverse: \WorkoutSession.plan)
         var sessions: [WorkoutSession] = []
@@ -19,13 +21,15 @@ extension SchemaV1 {
             createdAt: Date = .now,
             weekStartDate: Date,
             generatorVersion: String,
-            status: PlanStatus = .active
+            status: PlanStatus = .active,
+            isReturnWeek: Bool = false
         ) {
             self.id = id
             self.createdAt = createdAt
             self.weekStartDate = weekStartDate
             self.generatorVersion = generatorVersion
             self.statusRaw = status.rawValue
+            self.isReturnWeek = isReturnWeek
         }
 
         var status: PlanStatus {

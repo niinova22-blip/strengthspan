@@ -18,6 +18,19 @@ enum PreviewSupport {
     }
 
     private static func insertSampleData(into context: ModelContext) {
+        let answers = OnboardingAnswers(
+            ageRange: .age50to54,
+            activityLevel: .lightlyActive,
+            experienceLevel: .returning,
+            primaryGoal: .stayIndependent,
+            weekdays: Set(1...7),
+            sessionLength: .standard,
+            equipment: [.dumbbells],
+            screeningYes: [],
+            painRegions: []
+        )
+        _ = try? TrainingStore(context: context).completeOnboarding(answers, now: .now)
+
         let assessedAt = Calendar.current.date(byAdding: .day, value: -10, to: .now) ?? .now
 
         let session = AssessmentSession(
@@ -38,9 +51,6 @@ enum PreviewSupport {
         )
         strength.sourceSession = session
         context.insert(strength)
-
-        let todaySession = WorkoutSession(scheduledDate: .now, plannedDurationMinutes: 20)
-        context.insert(todaySession)
     }
 }
 #endif
