@@ -28,13 +28,10 @@ struct SettingsView: View {
                         Text(subscriptions?.isPro == true ? LocalizedStringKey("settings.subscription.pro") : "settings.subscription.free")
                     }
                     if subscriptions?.isPro != true {
-                        Button("settings.subscription.seePlans") { showsPaywall = true }
-                            .frame(minHeight: SSLayout.minTouchTarget)
+                        settingsButton("settings.subscription.seePlans", systemImage: "star") { showsPaywall = true }
                     }
-                    Button("paywall.restore") { Task { await subscriptions?.restore() } }
-                        .frame(minHeight: SSLayout.minTouchTarget)
-                    Button("paywall.manage") { showsManage = true }
-                        .frame(minHeight: SSLayout.minTouchTarget)
+                    settingsButton("paywall.restore", systemImage: "arrow.clockwise") { Task { await subscriptions?.restore() } }
+                    settingsButton("paywall.manage", systemImage: "creditcard") { showsManage = true }
                 } header: {
                     Text("settings.section.subscription")
                 }
@@ -50,6 +47,7 @@ struct SettingsView: View {
                     Text("settings.section.general")
                 } footer: {
                     Text("settings.language.footer")
+                        .foregroundStyle(SSColor.textSecondary)
                 }
 
                 if let preferences = profiles.first?.preferences {
@@ -67,6 +65,7 @@ struct SettingsView: View {
                     } footer: {
                         if HealthKitService.isAvailable {
                             Text("settings.appleHealth.footer")
+                                .foregroundStyle(SSColor.textSecondary)
                         }
                     }
                     .tint(SSColor.accent)
@@ -164,6 +163,18 @@ struct SettingsView: View {
                 try? modelContext.save()
             }
         )
+    }
+
+    /// Form row button with readable text: accent icon, primary-colored title.
+    private func settingsButton(_ title: LocalizedStringKey, systemImage: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Label {
+                Text(title).foregroundStyle(SSColor.textPrimary)
+            } icon: {
+                Image(systemName: systemImage).foregroundStyle(SSColor.accent)
+            }
+        }
+        .frame(minHeight: SSLayout.minTouchTarget)
     }
 
     private func healthBinding(_ preferences: UserPreferences) -> Binding<Bool> {

@@ -31,6 +31,8 @@ private struct SSButtonBody: View {
         configuration.label
             .font(SSFont.headline)
             .multilineTextAlignment(.center)
+            // Long labels (and large Dynamic Type sizes) wrap instead of being truncated.
+            .fixedSize(horizontal: false, vertical: true)
             .foregroundStyle(prominent ? SSColor.onAccent : SSColor.accent)
             .padding(.horizontal, SSSpacing.l)
             .padding(.vertical, SSSpacing.m)

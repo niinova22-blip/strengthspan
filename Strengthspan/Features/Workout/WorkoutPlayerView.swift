@@ -63,7 +63,10 @@ struct WorkoutPlayerView: View {
                 ProgressView(value: model.progressFraction)
                     .tint(SSColor.accent)
                     .frame(width: 140, height: 44)
+                    .contentShape(Rectangle())
+                    .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text("player.progress"))
+                    .accessibilityValue(Text(model.progressFraction, format: .percent.precision(.fractionLength(0))))
             }
         }
     }
@@ -319,6 +322,8 @@ struct UnwellButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(SSFont.headline)
+            .multilineTextAlignment(.center)
+            .fixedSize(horizontal: false, vertical: true)
             .foregroundStyle(SSColor.stop)
             .frame(maxWidth: .infinity, minHeight: SSLayout.minTouchTarget)
             .overlay(
