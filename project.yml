@@ -1,0 +1,102 @@
+name: Strengthspan
+
+options:
+  bundleIdPrefix: com.strengthspan
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  xcodeVersion: "16.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    TARGETED_DEVICE_FAMILY: "1"
+    SUPPORTS_MACCATALYST: NO
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+    SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ML3UZXMU3D
+
+targets:
+  Strengthspan:
+    type: application
+    platform: iOS
+    sources:
+      - path: Strengthspan
+    info:
+      path: Strengthspan/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Strengthspan
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, tr]
+        ITSAppUsesNonExemptEncryption: false
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIApplicationSupportsIndirectInputEvents: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiredDeviceCapabilities: [arm64]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.strengthspan.app
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+
+  StrengthspanTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: StrengthspanTests
+    dependencies:
+      - target: Strengthspan
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.strengthspan.app.tests
+
+  StrengthspanUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: StrengthspanUITests
+    dependencies:
+      - target: Strengthspan
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.strengthspan.app.uitests
+        TEST_TARGET_NAME: Strengthspan
+
+schemes:
+  Strengthspan:
+    build:
+      targets:
+        Strengthspan: all
+        StrengthspanTests: [test]
+        StrengthspanUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: StoreKit/Strengthspan.storekit
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - Strengthspan
+      targets:
+        - name: StrengthspanTests
+          parallelizable: true
+        - name: StrengthspanUITests
+    archive:
+      config: Release

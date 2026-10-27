@@ -1,0 +1,89 @@
+{
+  "identifier" : "5E2A7C1D",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6827702773",
+    "_developerTeamID" : "ML3UZXMU3D",
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA"
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "22520215",
+      "localizations" : [
+
+      ],
+      "name" : "Strengthspan Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "69.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6827703537",
+          "introductoryOffer" : {
+            "internalID" : "A3F1B2C4",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P2W"
+          },
+          "localizations" : [
+            {
+              "description" : "Full plan, reassessments and progress history.",
+              "displayName" : "Strengthspan Pro (Annual)",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.strengthspan.app.pro.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Annual Pro",
+          "subscriptionGroupID" : "22520215",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6827706080",
+          "introductoryOffer" : {
+            "internalID" : "B7D2E9F0",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P2W"
+          },
+          "localizations" : [
+            {
+              "description" : "Full plan, reassessments and progress history.",
+              "displayName" : "Strengthspan Pro (Monthly)",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.strengthspan.app.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Pro",
+          "subscriptionGroupID" : "22520215",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
