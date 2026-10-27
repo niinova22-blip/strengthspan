@@ -169,12 +169,16 @@ struct SettingsView: View {
     private func settingsButton(_ title: LocalizedStringKey, systemImage: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Label {
-                Text(title).foregroundStyle(SSColor.textPrimary)
+                Text(title)
+                    .foregroundStyle(SSColor.textPrimary)
+                    .fixedSize(horizontal: false, vertical: true)
             } icon: {
                 Image(systemName: systemImage).foregroundStyle(SSColor.accent)
             }
+            .padding(.vertical, SSSpacing.xs)
+            .frame(maxWidth: .infinity, minHeight: SSLayout.minTouchTarget, alignment: .leading)
+            .contentShape(Rectangle())
         }
-        .frame(minHeight: SSLayout.minTouchTarget)
     }
 
     private func healthBinding(_ preferences: UserPreferences) -> Binding<Bool> {
