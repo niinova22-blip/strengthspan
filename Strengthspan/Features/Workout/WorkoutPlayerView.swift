@@ -62,7 +62,7 @@ struct WorkoutPlayerView: View {
             if model.phase == .exercise || isResting {
                 ProgressView(value: model.progressFraction)
                     .tint(SSColor.accent)
-                    .frame(width: 140)
+                    .frame(width: 140, height: 44)
                     .accessibilityLabel(Text("player.progress"))
             }
         }

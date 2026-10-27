@@ -108,31 +108,37 @@ final class StrengthspanUITests: XCTestCase {
     @MainActor
     func testMainScreensPassTheAccessibilityAudit() throws {
         let app = launch(language: "en", locale: "en_US")
-        try audit(app, screen: "Welcome")
+        var failedScreens: [String] = []
+        audit(app, screen: "Welcome", failures: &failedScreens)
         completeOnboarding(app)
 
         XCTAssertTrue(app.tabBars.firstMatch.waitForExistence(timeout: 5))
-        try audit(app, screen: "Today")
+        audit(app, screen: "Today", failures: &failedScreens)
         app.tabBars.firstMatch.buttons["Progress"].tap()
-        try audit(app, screen: "Progress")
+        audit(app, screen: "Progress", failures: &failedScreens)
         app.tabBars.firstMatch.buttons["Settings"].tap()
-        try audit(app, screen: "Settings")
+        audit(app, screen: "Settings", failures: &failedScreens)
         app.tabBars.firstMatch.buttons["Today"].tap()
 
         tap("today.workout.start", in: app)
         XCTAssertTrue(app.buttons["player.checkIn.ok"].waitForExistence(timeout: 5))
-        try audit(app, screen: "Workout check-in")
+        audit(app, screen: "Workout check-in", failures: &failedScreens)
         tap("player.checkIn.ok", in: app)
-        try audit(app, screen: "Workout exercise")
+        audit(app, screen: "Workout exercise", failures: &failedScreens)
+
+        XCTAssertEqual(failedScreens, [], "Accessibility audit findings — see A11Y lines in the log")
     }
 
+    /// Audits one screen and keeps going, so a single run reports findings for every screen.
     @MainActor
-    private func audit(_ app: XCUIApplication, screen: String) throws {
-        try app.performAccessibilityAudit { issue in
-            // Report every finding with the screen it came from, then fail on it.
+    private func audit(_ app: XCUIApplication, screen: String, failures: inout [String]) {
+        var found = false
+        try? app.performAccessibilityAudit { issue in
             print("A11Y [\(screen)] \(issue.auditType) — \(issue.compactDescription) — \(issue.element?.debugDescription.prefix(160) ?? "no element")")
-            return false
+            found = true
+            return true
         }
+        if found { failures.append(screen) }
     }
 
     @MainActor

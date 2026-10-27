@@ -48,6 +48,7 @@ struct OnboardingView: View {
             }
             ProgressView(value: model.progress)
                 .tint(SSColor.accent)
+                .frame(maxWidth: .infinity, minHeight: SSLayout.minTouchTarget)
                 .accessibilityLabel(Text("onboarding.progress"))
         }
         .padding(.horizontal, SSSpacing.l)
