@@ -40,7 +40,8 @@ def token() -> str:
     )
 
 
-def request(method: str, path: str, body: dict | None = None) -> dict:
+def request(method: str, path: str, body: dict | None = None, tolerate: int | None = None) -> dict | None:
+    """Calls the API; exits on errors, except `tolerate` (an HTTP status), which returns None."""
     url = path if path.startswith("http") else f"{API}{path}"
     data = json.dumps(body).encode() if body is not None else None
     req = urllib.request.Request(url, data=data, method=method, headers={
@@ -53,6 +54,8 @@ def request(method: str, path: str, body: dict | None = None) -> dict:
             return json.loads(raw) if raw else {}
     except urllib.error.HTTPError as error:
         detail = error.read().decode(errors="replace")
+        if error.code == tolerate:
+            return None
         sys.exit(f"::error::App Store Connect API {method} {path} failed ({error.code}): {detail}")
 
 
@@ -145,11 +148,13 @@ def testflight() -> None:
         print(f"Created internal TestFlight group '{INTERNAL_GROUP}'")
 
     existing = {t["attributes"]["email"].lower() for t in request("GET", f"/betaGroups/{group['id']}/betaTesters?limit=200")["data"] if t["attributes"].get("email")}
+    skipped = 0
     for user in request("GET", "/users?limit=200")["data"]:
         email = user["attributes"]["username"]
         if email.lower() in existing:
             continue
-        request("POST", "/betaTesters", {"data": {
+        # 409 STATE_ERROR: this member's role or app access does not allow internal testing.
+        added = request("POST", "/betaTesters", {"data": {
             "type": "betaTesters",
             "attributes": {
                 "email": email,
@@ -157,8 +162,13 @@ def testflight() -> None:
                 "lastName": user["attributes"].get("lastName") or "Member",
             },
             "relationships": {"betaGroups": {"data": [{"type": "betaGroups", "id": group["id"]}]}},
-        }})
+        }}, tolerate=409)
+        if added is None:
+            skipped += 1
+            continue
         print("Added a team member to the internal group")
+    if skipped:
+        print(f"::warning::{skipped} team member(s) cannot be internal testers (role or app access)")
     print("Internal TestFlight group is ready")
 
 
