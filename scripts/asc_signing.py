@@ -74,9 +74,11 @@ def create(out: pathlib.Path) -> None:
     )
     csr_b64 = base64.b64encode(csr.public_bytes(serialization.Encoding.DER)).decode()
 
+    # The team already holds the maximum number of Apple Distribution certificates (other projects'
+    # CI); an iOS Distribution certificate signs App Store builds the same way and has a free slot.
     certificate = request("POST", "/certificates", {"data": {
         "type": "certificates",
-        "attributes": {"certificateType": "DISTRIBUTION", "csrContent": csr_b64},
+        "attributes": {"certificateType": "IOS_DISTRIBUTION", "csrContent": csr_b64},
     }})["data"]
     cert_der = base64.b64decode(certificate["attributes"]["certificateContent"])
     cert = x509.load_der_x509_certificate(cert_der)
