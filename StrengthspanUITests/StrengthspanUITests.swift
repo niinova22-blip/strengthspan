@@ -135,7 +135,17 @@ final class StrengthspanUITests: XCTestCase {
     @MainActor
     private func settle(on title: String, in app: XCUIApplication) {
         XCTAssertTrue(app.navigationBars[title].waitForExistence(timeout: 5))
-        Thread.sleep(forTimeInterval: 1.5)
+        // A fixed delay was not always enough: the large title can still be collapsing, and the audit
+        // then reports half-faded text as low contrast. Wait until two snapshots of the tree match
+        // (element addresses differ between snapshots, so they are left out of the comparison).
+        var previous = ""
+        let deadline = Date().addingTimeInterval(8)
+        while Date() < deadline {
+            Thread.sleep(forTimeInterval: 0.5)
+            let current = app.debugDescription.replacingOccurrences(of: "0x[0-9a-f]+", with: "", options: .regularExpression)
+            if current == previous { return }
+            previous = current
+        }
     }
 
     /// Audits one screen and keeps going, so a single run reports findings for every screen.
