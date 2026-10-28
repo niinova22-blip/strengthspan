@@ -16,12 +16,13 @@ jobs:
       ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
       ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
       ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
-      SIGNING_DIR: ${{ runner.temp }}/signing
     steps:
       - uses: actions/checkout@v4
 
       - name: Ayarları denetle
         run: |
+          # The runner context is not available in job-level env, so the path is set here.
+          echo "SIGNING_DIR=$RUNNER_TEMP/signing" >> "$GITHUB_ENV"
           for name in ASC_KEY_ID ASC_ISSUER_ID ASC_PRIVATE_KEY; do
             if [ -z "${!name}" ]; then
               echo "::error::$name secret tanımlı değil (README › TestFlight)"
