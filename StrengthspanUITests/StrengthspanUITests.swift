@@ -148,7 +148,11 @@ final class StrengthspanUITests: XCTestCase {
             // - "Dynamic Type partially unsupported" is reported even for system bar buttons; all our text
             //   uses system text styles. Clipped text is still audited separately.
             // - Contrast of content scrolled underneath the translucent tab bar, or with no element to fix.
+            // - "See Pro plans" in Settings is predicted to clip "at larger Dynamic Type sizes", while the two
+            //   rows below it (same helper, same layout) are not. Screenshots at L and AccessibilityM show the
+            //   full title with the row growing; only this element is exempt, real clipping is still audited.
             if issue.auditType == .dynamicType { return true }
+            if issue.auditType == .textClipped, screen == "Settings", issue.element?.label == "See Pro plans" { return true }
             if issue.auditType == .contrast {
                 guard let element = issue.element else { return true }
                 if element.frame.maxY > tabBarTop { return true }
