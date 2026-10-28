@@ -139,8 +139,13 @@ jobs:
         run: |
           mkdir -p ~/.appstoreconnect/private_keys
           printf '%s' "$ASC_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8
+          # altool exits 0 even when App Store Connect rejects the build, so its output decides.
           xcrun altool --upload-app -f "$RUNNER_TEMP/export/Strengthspan.ipa" -t ios \
-            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID" 2>&1 | tee "$RUNNER_TEMP/altool.log"
+          if grep -qE "UPLOAD FAILED|Failed to upload" "$RUNNER_TEMP/altool.log"; then
+            echo "::error::TestFlight yüklemesi reddedildi (ayrıntı yukarıda)"
+            exit 1
+          fi
 
       - name: İç test grubunu hazırla
         run: python3 scripts/asc_signing.py testflight
