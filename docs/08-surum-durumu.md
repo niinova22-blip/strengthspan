@@ -15,6 +15,12 @@ Son güncelleme: 28 Ekim 2026. Kaynak: GitHub Actions `iOS Build` (macos-15, Xco
 
 Domain kodu (güvenlik, plan, progresyon, poz analizi, karşılaştırma, abonelik kuralları) ayrıca Windows'taki Swift 6.4 araç zincirinde de derlenip test edildi (74 test).
 
+## 1a. TestFlight
+
+- 28 Ekim 2026: 1.0 (10) TestFlight'ta işlendi, "Strengthspan Internal" iç grubunda (tüm build'lere erişim).
+- Yükleme `TestFlight` workflow'u ile elle tetiklenir. Her çalışma geçici bir iOS Distribution sertifikası ve profil oluşturur, sonunda ikisini de siler (ekip Apple Distribution sertifika sınırında).
+- Uygulama yalnızca iPhone hedefliyor (`TARGETED_DEVICE_FAMILY = 1`). iPad'de iPhone uyumluluk modunda çalışır.
+
 ## 2. Gerçek cihaz gerektirenler 🔵 (TestFlight ile)
 
 | Konu | Neden simülatörde test edilemez | Nasıl doğrulanacak |
